@@ -1,5 +1,5 @@
-import dynamic from "next/dynamic";
 "use client";
+import dynamic from "next/dynamic";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
 

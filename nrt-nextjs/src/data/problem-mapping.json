@@ -1,0 +1,79 @@
+[
+  {
+    "id": "prob_inventory",
+    "problem": "Inventory mismatch and stockouts",
+    "category": "Inventory",
+    "solutions": ["Warehouse ERP", "Inventory Management Module", "Automated Barcoding", "Cycle Counting"],
+    "roadmap": ["Month 1: Inventory Audit & Setup", "Month 2: Barcode Implementation", "Month 3: Real-time Sync"],
+    "estimatedTimeline": "10 Weeks",
+    "suggestedTeam": ["Project Manager", "Supply Chain Analyst", "2 Integration Developers", "QA"],
+    "relatedArticles": ["inventory-reconciliation-guide", "warehouse-erp-benefits"],
+    "relatedCaseStudies": ["manufacturing-company-inventory"],
+    "academyCourses": ["inventory-fundamentals"],
+    "maturityScoreImpact": {
+      "inventory": 25,
+      "finance": 10
+    }
+  },
+  {
+    "id": "prob_manual_work",
+    "problem": "Too much manual data entry and repetitive tasks",
+    "category": "Operations",
+    "solutions": ["AI Workflow Automation", "OCR Invoice Processing", "RPA Agents"],
+    "roadmap": ["Month 1: Process Mapping", "Month 2: RPA Deployment", "Month 3: AI Training & Handoff"],
+    "estimatedTimeline": "8 Weeks",
+    "suggestedTeam": ["Business Analyst", "AI Automation Engineer", "Data Engineer"],
+    "relatedArticles": ["ai-automation-examples", "how-ai-reduces-costs"],
+    "relatedCaseStudies": ["insurance-ocr-automation"],
+    "academyCourses": ["ai-automation-smes"],
+    "maturityScoreImpact": {
+      "automation": 35,
+      "hr": 5
+    }
+  },
+  {
+    "id": "prob_hr_payroll",
+    "problem": "HR compliance risks and manual payroll calculation",
+    "category": "HR",
+    "solutions": ["Automated HRMS", "Payroll Module", "Employee Self-Service Portal"],
+    "roadmap": ["Month 1: HR Policy Configuration", "Month 2: Payroll Integration", "Month 3: Portal Rollout"],
+    "estimatedTimeline": "6 Weeks",
+    "suggestedTeam": ["HR Consultant", "Software Engineer", "QA"],
+    "relatedArticles": ["hrms-guide"],
+    "relatedCaseStudies": ["retail-hrms-deployment"],
+    "academyCourses": ["hrms-development"],
+    "maturityScoreImpact": {
+      "hr": 30
+    }
+  },
+  {
+    "id": "prob_finance_reporting",
+    "problem": "Delayed financial reporting and reconciliation",
+    "category": "Finance",
+    "solutions": ["Finance ERP Module", "BI Dashboards", "Automated Reconciliation"],
+    "roadmap": ["Month 1: Chart of Accounts Setup", "Month 2: BI Dashboard Design", "Month 3: Live Financials"],
+    "estimatedTimeline": "12 Weeks",
+    "suggestedTeam": ["Finance ERP Specialist", "Data Analyst", "Full Stack Developer"],
+    "relatedArticles": ["erp-vs-excel", "bi-dashboards-roi"],
+    "relatedCaseStudies": ["trading-finance-reconciliation"],
+    "academyCourses": ["accounting-systems"],
+    "maturityScoreImpact": {
+      "finance": 40
+    }
+  },
+  {
+    "id": "prob_sales_crm",
+    "problem": "Losing track of leads and poor customer follow-up",
+    "category": "Sales",
+    "solutions": ["Custom CRM", "Sales Automation", "Lead Scoring AI"],
+    "roadmap": ["Month 1: Sales Pipeline Setup", "Month 2: Automation Workflows", "Month 3: AI Lead Scoring"],
+    "estimatedTimeline": "8 Weeks",
+    "suggestedTeam": ["CRM Consultant", "Frontend Engineer", "Backend Engineer"],
+    "relatedArticles": ["crm-development-guide"],
+    "relatedCaseStudies": ["real-estate-crm"],
+    "academyCourses": ["crm-development"],
+    "maturityScoreImpact": {
+      "sales": 30
+    }
+  }
+]

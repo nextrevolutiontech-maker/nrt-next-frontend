@@ -1,0 +1,21 @@
+{
+    "name": "Next Revolution Tech",
+    "short_name": "NRT",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#F8F9FA",
+    "theme_color": "#0B1B35",
+    "description": "Global technology partner delivering enterprise-grade software solutions.",
+    "icons": [
+        {
+            "src": "/logo.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/logo.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
