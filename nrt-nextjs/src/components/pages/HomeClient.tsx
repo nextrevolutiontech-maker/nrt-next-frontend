@@ -1,5 +1,6 @@
 "use client";
 import dynamic from "next/dynamic";
+import Image from "next/image";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
 
@@ -383,12 +384,12 @@ export function HomeClient() {
                        'https://randomuser.me/api/portraits/women/68.jpg',
                        'https://randomuser.me/api/portraits/men/90.jpg'
                      ].map((imgUrl, i) => (
-                       <img 
+                       <Image 
                          key={i} 
                          src={imgUrl}
                          alt={`Trusted client ${i + 1}`}
                          className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-[3px] border-white shadow-md object-cover hover:-translate-y-1 hover:z-10 relative transition-all duration-300"
-                       />
+                       / width={48} height={48} />
                      ))}
                   </div>
                    <div className="space-y-1 text-left">
@@ -604,7 +605,7 @@ export function HomeClient() {
                 { name: "WooCommerce", logo: "https://cdn.worldvectorlogo.com/logos/woocommerce.svg" }
               ].map((brand, i) => (
                 <div key={i} className="flex items-center gap-3.5 group shrink-0">
-                  <img src={brand.logo} alt={brand.name} loading="lazy" className="h-6 sm:h-7 w-auto transition-transform duration-500 group-hover:scale-110 grayscale-[50%] group-hover:grayscale-0" />
+                  <Image src={brand.logo} alt={brand.name} loading="lazy" className="h-6 sm:h-7 w-auto transition-transform duration-500 group-hover:scale-110 grayscale-[50%] group-hover:grayscale-0" / width={800} height={600} />
                   <span className="text-sm font-semibold tracking-tighter text-slate-500 group-hover:text-[#0f172a] transition-colors uppercase">{brand.name}</span>
                 </div>
               ))}
@@ -623,9 +624,17 @@ export function HomeClient() {
                <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-[#0f172a] leading-[1.08] mb-8">
                  Built for <span className="text-orange-600">Outcomes</span>, <br />Not Just Output.
                </h2>
-               <p className="text-lg sm:text-xl text-nrt-body text-slate-700 max-w-2xl leading-relaxed">
+               <p className="text-lg sm:text-xl text-nrt-body text-slate-700 max-w-2xl leading-relaxed mb-6">
                  We don't just write code. We implement systems that reduce manual work, increase visibility, and scale operations across your entire organization.
                </p>
+               
+               {/* GEO: Entity-First Definition Block */}
+               <div className="bg-slate-50 border-l-4 border-slate-300 p-4 rounded-r-xl max-w-2xl text-left">
+                  <h3 className="text-xs font-black uppercase tracking-widest text-slate-400 mb-1">What is Next Revolution Tech?</h3>
+                  <p className="text-sm font-medium text-slate-600 leading-relaxed">
+                     Next Revolution Tech (NRT) is an enterprise software development and AI automation agency. We specialize in building bespoke ERP systems, Agentic AI workflows, and custom SaaS platforms that eliminate operational bottlenecks.
+                  </p>
+               </div>
             </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {/* Card 1: ERP & Business Automation - Large Bento Span */}
@@ -955,12 +964,12 @@ export function HomeClient() {
               {featuredProjects.map((project, idx) => (
                 <div key={idx} className="group bg-white rounded-[2rem] border border-slate-300 overflow-hidden hover:border-slate-400/40 hover:border-slate-400 hover:shadow-[0_20px_45px_rgba(20,184,166,0.08)] transition-all duration-300 flex flex-col h-full shadow-2xl">
                   <div className="relative aspect-video overflow-hidden bg-slate-100 border-b border-slate-300">
-                    <img 
+                    <Image 
                       src={project.image} 
                       alt={project.title} 
                       loading="lazy"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
-                    />
+                    / width={800} height={600} />
                     <span className="absolute bottom-4 left-4 bg-orange-600/80 backdrop-blur-md text-white text-[9px] font-black uppercase tracking-[0.2em] px-4 py-1.5 rounded-lg">
                       {project.category}
                     </span>
@@ -1137,7 +1146,7 @@ export function HomeClient() {
                           </Link>
                           <div className="flex -space-x-3">
                              {[1, 2, 3, 4].map((i) => (
-                               <img key={i} src={`https://i.pravatar.cc/100?img=${i+40}`} alt="Expert" loading="lazy" className="w-12 h-12 rounded-full border-4 border-[#0F172A] shadow-xl" />
+                               <Image key={i} src={`https://i.pravatar.cc/100?img=${i+40}`} alt="Expert" loading="lazy" className="w-12 h-12 rounded-full border-4 border-[#0F172A] shadow-xl" / width={48} height={48} />
                              ))}
                              <div className="w-12 h-12 rounded-full bg-white/5 border-4 border-[#0F172A] flex items-center justify-center text-[10px] font-black text-[#0f172a]/40">+50</div>
                           </div>
@@ -1230,12 +1239,12 @@ export function HomeClient() {
               <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-16 items-center">
                 <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
                   <div className="relative w-48 h-48 sm:w-64 sm:h-64 rounded-full overflow-hidden border-4 border-orange-600 shadow-2xl mb-8 bg-white">
-                    <img 
+                    <Image 
                       src={FOUNDER.imageUrl} 
                       alt={FOUNDER.name} 
                       loading="lazy"
                       className="w-full h-full object-cover object-center" 
-                    />
+                    / width={800} height={600} />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#080B11]/50 to-transparent pointer-events-none" />
                   </div>
                   <h3 className="text-3xl font-black text-[#0f172a] mb-2">{FOUNDER.name}</h3>
@@ -1475,7 +1484,7 @@ function FAQItem({ faq, index }: { faq: any, index: number }) {
         {/* Floating Hover Image */}
         {faq.img && (
           <div className="absolute right-28 top-1/2 -translate-y-1/2 w-48 h-48 rounded-full overflow-hidden opacity-0 group-hover:opacity-100 translate-x-4 group-hover:translate-x-0 transition-all duration-700 pointer-events-none z-20 hidden xl:flex items-center justify-center pointer-events-none mix-blend-multiply" style={{ maskImage: 'radial-gradient(circle, black 50%, transparent 70%)', WebkitMaskImage: 'radial-gradient(circle, black 50%, transparent 70%)' }}>
-            <img src={faq.img} alt="" className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000" />
+            <Image src={faq.img} alt="" className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000" / width={800} height={600} />
           </div>
         )}
 

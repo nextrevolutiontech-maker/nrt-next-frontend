@@ -14,17 +14,44 @@ export default function ServicesPage() {
     <>
       <script 
         type="application/ld+json" 
-        dangerouslySetInnerHTML={{ __html: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Service",
-          "name": "Enterprise Software & AI Automation Services",
-          "provider": {
-            "@type": "Organization",
-            "name": "Next Revolution Tech"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([
+          {
+            "@context": "https://schema.org",
+            "@type": "ProfessionalService",
+            "name": "Next Revolution Tech Services",
+            "image": "https://www.nextrevolutiontech.tech/og-image.png",
+            "url": "https://www.nextrevolutiontech.tech/services",
+            "telephone": "+92-344-201-3217",
+            "priceRange": "$$$",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "PK"
+            },
+            "description": "Comprehensive suite of enterprise services including custom software development, AI integration, cloud solutions, and eCommerce.",
+            "provider": {
+              "@type": "Organization",
+              "name": "Next Revolution Tech"
+            }
           },
-          "url": "https://www.nextrevolutiontech.tech/services",
-          "description": "Comprehensive suite of enterprise services including custom software development, AI integration, cloud solutions, and eCommerce."
-        }) }} 
+          {
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "url": "https://www.nextrevolutiontech.tech/services/custom-software-development",
+                "name": "Custom Software Development"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "url": "https://www.nextrevolutiontech.tech/services/ai-automation",
+                "name": "AI Automation Services"
+              }
+            ]
+          }
+        ]) }} 
       />
       <ServicesClient />
     </>

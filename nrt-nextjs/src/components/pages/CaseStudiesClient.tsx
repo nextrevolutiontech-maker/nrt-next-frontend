@@ -140,10 +140,18 @@ export function CaseStudiesClient() {
                         {study.industry}
                       </span>
                       {/* Reduced title size by 35% (from 4xl/7xl to 3xl/4xl) */}
-                      <h2 className="text-3xl lg:text-4xl font-bold tracking-tight text-slate-900 leading-tight mb-8">
+                      <h2 className="text-3xl lg:text-4xl font-bold tracking-tight text-slate-900 leading-tight mb-6">
                         {study.title}
                       </h2>
                       
+                      {/* GEO: Entity-First AI Answer Block */}
+                      <div className="bg-slate-50 border-l-4 border-orange-600 p-4 rounded-r-xl mb-6">
+                         <h3 className="text-xs font-black uppercase tracking-widest text-slate-400 mb-1">TL;DR Summary</h3>
+                         <p className="text-sm font-medium text-slate-800 leading-relaxed">
+                            {study.title} for the {study.industry} sector. {study.solution} resulting in {study.outcome.toLowerCase()}
+                         </p>
+                      </div>
+
                       <div className="space-y-8">
                          <div>
                             <h3 className="text-[11px] font-black uppercase tracking-widest text-slate-900/50 mb-3">Challenge</h3>

@@ -16,12 +16,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/privacy-policy',
     '/terms',
     '/case-studies',
-    '/blog'
+    '/blog',
+    '/resources',
+    '/dedicated-teams',
+    '/solution-finder'
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
-    priority: route === '' ? 1 : 0.8,
+    changeFrequency: (route === '' || route === '/blog' || route === '/services') ? 'daily' : 'weekly' as any,
+    priority: route === '' ? 1.0 : (route === '/services' || route === '/pricing' ? 0.9 : 0.8),
   }))
 
   // Dynamic MDX Content (Blog & Case Studies)

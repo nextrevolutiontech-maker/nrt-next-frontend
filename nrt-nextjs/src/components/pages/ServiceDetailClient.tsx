@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
+import Link from "next/link";
 
 import { ArrowLeft, CheckCircle2 } from "lucide-react";
 import Image from "next/image";
@@ -11,18 +12,27 @@ import { motion } from "motion/react";
 const enhancedContent: Record<string, any> = {
     "custom-software-development": {
         subtitle: "Tailored Solutions for Complex Challenges",
+        tldr: "Custom software development builds bespoke applications designed specifically for your unique operational needs, ensuring perfect integration and absolute ownership.",
+        targetAudience: "Enterprise companies outgrowing off-the-shelf software and needing proprietary workflows.",
+        pricingFactors: "Complexity, Integrations, UI/UX demands, and Platform support.",
         longDescription: "Off-the-shelf software often fails to meet unique business needs. Our custom software development service provides you with a perfectly fitted solution.",
         benefits: ["Full ownership of code", "Seamless integration", "Scalable architecture", "Automated workflows"],
         process: ["Discovery", "Development", "Testing", "Support"]
     },
     "saas-development": {
         subtitle: "From Concept to Market Leader",
+        tldr: "End-to-end SaaS application development providing secure, scalable, multi-tenant architectures ready for subscription monetization.",
+        targetAudience: "Startups and enterprises launching new digital products or migrating legacy tools to the cloud.",
+        pricingFactors: "Multi-tenancy depth, Data security requirements, Third-party APIs, and AI integrations.",
         longDescription: "Building a SaaS product requires strategy. We help you build multi-tenant, secure, and scalable platforms.",
         benefits: ["Multi-tenant architecture", "Subscription billing", "High availability", "Secure isolation"],
         process: ["MVP Strategy", "UX Design", "Build", "Scale"]
     },
     "ai-automation": {
         subtitle: "Leverage Artificial Intelligence",
+        tldr: "Integrate Agentic AI and machine learning models to automate repetitive tasks, analyze data, and create intelligent customer support systems.",
+        targetAudience: "Businesses handling high-volume repetitive tasks, customer inquiries, or massive datasets.",
+        pricingFactors: "Custom model training, API tokens usage, Data sanitation, and Workflow complexity.",
         longDescription: "Automate repetitive tasks and gain predictive insights with our custom AI solutions.",
         benefits: ["24/7 AI Support", "Data-driven decisions", "Reduced costs", "Predictive models"],
         process: ["Assessment", "Training", "Integration", "Monitoring"]
@@ -31,8 +41,6 @@ const enhancedContent: Record<string, any> = {
 
 export function ServiceDetailClient({ slug: propSlug }: { slug?: string }) {
     const params = useParams();
-    const slug = propSlug || (params?.slug as string);
-    const [service, setService] = useState<any>(null);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -79,16 +87,46 @@ export function ServiceDetailClient({ slug: propSlug }: { slug?: string }) {
                 <div className="grid lg:grid-cols-2 gap-20 items-center">
                     <div>
                         <div className="text-[10px] font-black uppercase tracking-[0.4em] text-orange-600 mb-8">Service Details</div>
-                        <h1 className="text-5xl sm:text-7xl lg:text-8xl font-black mb-10 tracking-tighter leading-[0.9]">{service.title}</h1>
+                        <h1 className="text-5xl sm:text-7xl lg:text-8xl font-black mb-10 tracking-tighter leading-[0.9]">{service?.title}</h1>
                         <p className="text-2xl font-bold mb-8 text-orange-600">{extra.subtitle}</p>
-                        <p className="text-xl font-bold text-slate-900/50 leading-relaxed mb-12 max-w-xl">{extra.longDescription}</p>
+                        
+                        {/* GEO Optimization: Answer-first AI Block */}
+                        {extra.tldr && (
+                        <div className="bg-slate-50 border-l-4 border-orange-600 p-6 rounded-r-2xl mb-8">
+                           <h2 className="text-sm font-black uppercase tracking-widest text-slate-400 mb-2">Executive Summary (TL;DR)</h2>
+                           <p className="text-lg font-medium text-slate-800 leading-relaxed">{extra.tldr}</p>
+                        </div>
+                        )}
+                        
+                        <p className="text-xl font-bold text-slate-900/50 leading-relaxed mb-8 max-w-xl">{extra.longDescription}</p>
+                        
+                        {/* GEO: Target Audience & Pricing */}
+                        {extra.targetAudience && (
+                        <div className="flex flex-col gap-4 mb-12">
+                           <div className="flex items-start gap-3">
+                              <CheckCircle2 className="w-5 h-5 text-orange-600 mt-0.5 shrink-0" />
+                              <div>
+                                 <strong className="block text-slate-900 font-bold mb-1">Who is this for?</strong>
+                                 <span className="text-slate-600 text-sm font-medium">{extra.targetAudience}</span>
+                              </div>
+                           </div>
+                           <div className="flex items-start gap-3">
+                              <CheckCircle2 className="w-5 h-5 text-orange-600 mt-0.5 shrink-0" />
+                              <div>
+                                 <strong className="block text-slate-900 font-bold mb-1">Pricing Factors</strong>
+                                 <span className="text-slate-600 text-sm font-medium">{extra.pricingFactors}</span>
+                              </div>
+                           </div>
+                        </div>
+                        )}
+
                         <Link href="/contact" className="bg-orange-600 text-white px-10 py-5 rounded-2xl text-xl font-black shadow-2xl hover:scale-105 transition-all inline-block">
                             Get Started
                         </Link>
                     </div>
                     <div className="relative rounded-[3rem] overflow-hidden shadow-2xl border border-slate-300 group">
                         <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A] to-transparent opacity-40 z-10" />
-                        <Image width={1200} height={800} src={service.image_url} alt={service.title} className="w-full h-auto transform group-hover:scale-105 transition-transform duration-1000" />
+                        {service?.image_url && <Image width={1200} height={800} src={service.image_url} alt={service.title} className="w-full h-auto transform group-hover:scale-105 transition-transform duration-1000" />}
                     </div>
                 </div>
               </div>

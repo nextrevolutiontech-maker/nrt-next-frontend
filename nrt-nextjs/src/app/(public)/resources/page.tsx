@@ -24,17 +24,47 @@ export default function ResourcesPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "CollectionPage",
-            "name": "Knowledge Hub | Next Revolution Tech",
-            "description": "Practical insights on ERP systems, AI automation, workflow optimization and business growth.",
-            "url": "https://www.nextrevolutiontech.com/resources",
-            "publisher": {
-              "@type": "Organization",
-              "name": "Next Revolution Tech"
+          __html: JSON.stringify([
+            {
+              "@context": "https://schema.org",
+              "@type": "CollectionPage",
+              "name": "Knowledge Hub | Next Revolution Tech",
+              "description": "Practical insights on ERP systems, AI automation, workflow optimization and business growth.",
+              "url": "https://www.nextrevolutiontech.tech/resources",
+              "publisher": {
+                "@type": "Organization",
+                "name": "Next Revolution Tech"
+              }
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "ItemList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "url": "https://www.nextrevolutiontech.tech/resources/digital-wallet-architecture"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "url": "https://www.nextrevolutiontech.tech/resources/what-is-manufacturing-erp"
+                }
+              ]
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "WebPage",
+              "url": "https://www.nextrevolutiontech.tech/resources",
+              "speakable": {
+                "@type": "SpeakableSpecification",
+                "xpath": [
+                  "/html/head/title",
+                  "/html/head/meta[@name='description']/@content"
+                ]
+              }
             }
-          })
+          ])
         }}
       />
       <ResourcesClient />
