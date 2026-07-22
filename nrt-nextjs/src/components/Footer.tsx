@@ -158,11 +158,11 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
-          <div className="text-nrt-label text-slate-900/35">
+        <div className="pt-10 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-8">
+          <div className="text-nrt-label text-slate-600 font-medium">
             © {currentYear} Next Revolution Tech. All rights reserved.
           </div>
-          <div className="flex flex-wrap justify-center gap-8 text-nrt-label text-slate-900/35">
+          <div className="flex flex-wrap justify-center gap-8 text-nrt-label text-slate-600 font-medium">
             {footerLinks.legal.map((link) => (
               <Link key={link.name} href={link.href} className="hover:text-orange-600 transition-colors">
                 {link.name}

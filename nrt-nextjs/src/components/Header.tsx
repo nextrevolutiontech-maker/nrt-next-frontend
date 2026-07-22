@@ -156,6 +156,7 @@ export function Header() {
 
           {/* Mobile Menu Toggle Button */}
           <button
+            aria-label="Toggle navigation menu"
             className={`xl:hidden p-2 rounded-xl transition-colors z-50 ${
               scrolled ? "text-slate-900 hover:bg-white/5" : "text-slate-900 hover:bg-white/10"
             }`}
