@@ -98,5 +98,11 @@
     "overrides": {
       "vite": "6.3.5"
     }
+  },
+  "overrides": {
+    "react-day-picker": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    }
   }
 }
