@@ -24,10 +24,32 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: {
     template: "%s | Next Revolution Tech",
-    default: "Next Revolution Tech | Enterprise Software Development & AI Solutions",
+    default: "ERP Development Company | AI Automation & Custom Software | Next Revolution Tech",
   },
-  description: "Global technology partner delivering enterprise-grade software solutions, AI innovations, and scalable cloud ecosystems. Specialized in eCommerce, APIs, and Agentic AI.",
-  keywords: ["Software Development", "AI Solutions", "Enterprise Software", "Next Revolution Tech", "NRT", "eCommerce Development", "API Integration", "Agentic AI", "Dedicated Developers", "Business Automation"],
+  description: "Next Revolution Tech helps businesses scale with ERP systems, AI automation, custom software development, SaaS platforms, Shopify solutions, and dedicated engineering teams.",
+  keywords: [
+    "ERP Development Company",
+    "Custom ERP Software",
+    "AI Development Company",
+    "Business Process Automation",
+    "Enterprise Software Development",
+    "SaaS Development Company",
+    "Shopify Development Agency",
+    "Healthcare Software Development",
+    "Manufacturing ERP",
+    "CRM Development",
+    "POS System",
+    "Inventory Management",
+    "Agentic AI",
+    "Dedicated Developers",
+    "Next Revolution Tech",
+    "NRT",
+    "React",
+    "Next.js",
+    "Node.js",
+    "PostgreSQL",
+    "TypeScript"
+  ],
   metadataBase: new URL("https://www.nextrevolutiontech.tech"),
   authors: [{ name: "Next Revolution Tech", url: "https://www.nextrevolutiontech.tech" }],
   creator: "Next Revolution Tech",
@@ -43,8 +65,8 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: "Next Revolution Tech",
-    title: "Next Revolution Tech | Enterprise Software Development & AI Solutions",
-    description: "Global technology partner delivering enterprise-grade software solutions, AI innovations, and scalable cloud ecosystems.",
+    title: "ERP Development Company | AI Automation & Custom Software | Next Revolution Tech",
+    description: "Next Revolution Tech helps businesses scale with ERP systems, AI automation, custom software development, SaaS platforms, Shopify solutions, and dedicated engineering teams.",
     url: "https://www.nextrevolutiontech.tech",
     locale: "en_US",
     images: [
@@ -52,7 +74,7 @@ export const metadata: Metadata = {
         url: "/og-image.png", 
         width: 1200, 
         height: 630, 
-        alt: "Next Revolution Tech Enterprise IT & AI Solutions" 
+        alt: "Next Revolution Tech - ERP Development & AI Automation Agency" 
       }
     ],
   },
@@ -60,8 +82,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@nextrevtech",
     creator: "@nextrevtech",
-    title: "Next Revolution Tech | Enterprise IT & AI Solutions",
-    description: "Global technology partner delivering enterprise-grade software solutions, AI innovations, and scalable cloud ecosystems.",
+    title: "ERP Development Company | AI Automation & Custom Software | Next Revolution Tech",
+    description: "Next Revolution Tech helps businesses scale with ERP systems, AI automation, custom software development, SaaS platforms, Shopify solutions, and dedicated engineering teams.",
     images: ["/og-image.png"],
   },
   robots: {
@@ -98,12 +120,13 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@graph": [
                 {
-                  "@type": "LocalBusiness",
+                  "@type": "Organization",
                   "@id": "https://www.nextrevolutiontech.tech/#organization",
                   "name": "Next Revolution Tech",
+                  "legalName": "Next Revolution Tech",
                   "url": "https://www.nextrevolutiontech.tech",
                   "logo": "https://www.nextrevolutiontech.tech/logo.png",
-                  "image": "https://www.nextrevolutiontech.tech/logo.png",
+                  "image": "https://www.nextrevolutiontech.tech/og-image.png",
                   "telephone": "+923442013217",
                   "email": "contact@nextrevolutiontech.tech",
                   "address": {
@@ -115,17 +138,38 @@ export default function RootLayout({
                     "addressCountry": "PK"
                   },
                   "foundingDate": "2022",
+                  "founder": {
+                    "@type": "Person",
+                    "name": "Muhammad Ahsan Khan",
+                    "jobTitle": "Founder & Lead Architect",
+                    "url": "https://www.nextrevolutiontech.tech/author/muhammad-ahsan-khan"
+                  },
                   "sameAs": [
-                    "https://www.linkedin.com/company/next-revolution-tech",
-                    "https://twitter.com/nextrevtech"
+                    "https://www.linkedin.com/company/nextrevolutiontech",
+                    "https://twitter.com/nextrevtech",
+                    "https://github.com/nextrevolutiontech-maker"
                   ]
+                },
+                {
+                  "@type": "LocalBusiness",
+                  "@id": "https://www.nextrevolutiontech.tech/#localbusiness",
+                  "name": "Next Revolution Tech",
+                  "image": "https://www.nextrevolutiontech.tech/og-image.png",
+                  "url": "https://www.nextrevolutiontech.tech",
+                  "telephone": "+923442013217",
+                  "priceRange": "$$$",
+                  "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Karachi",
+                    "addressCountry": "PK"
+                  }
                 },
                 {
                   "@type": "WebSite",
                   "@id": "https://www.nextrevolutiontech.tech/#website",
                   "url": "https://www.nextrevolutiontech.tech",
                   "name": "Next Revolution Tech",
-                  "description": "Enterprise Software Development, Custom ERP & Agentic AI Solutions.",
+                  "description": "Next Revolution Tech helps businesses scale with ERP systems, AI automation, custom software development, SaaS platforms, Shopify solutions, and dedicated engineering teams.",
                   "publisher": {
                     "@id": "https://www.nextrevolutiontech.tech/#organization"
                   }
