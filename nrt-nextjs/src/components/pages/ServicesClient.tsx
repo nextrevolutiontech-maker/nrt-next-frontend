@@ -30,6 +30,7 @@ import { InteractiveHero3D } from "@/components/ui/InteractiveHero3D";
 export function ServicesClient() {
   const services = [
     {
+      slug: "erp-development",
       icon: <Settings className="w-8 h-8" />,
       title: "ERP Systems",
       desc: "Centralize operations, eliminate spreadsheet chaos, improve reporting and gain complete visibility across your business.",
@@ -39,6 +40,7 @@ export function ServicesClient() {
       accent: "bg-white/10"
     },
     {
+      slug: "ai-automation",
       icon: <Zap className="w-8 h-8" />,
       title: "AI Automation",
       desc: "Automate repetitive work, approvals, reporting and workflows using AI-powered systems.",
@@ -48,6 +50,7 @@ export function ServicesClient() {
       accent: "bg-white/10"
     },
     {
+      slug: "custom-software-development",
       icon: <Workflow className="w-8 h-8" />,
       title: "Custom Business Software",
       desc: "Build software around your business processes instead of forcing your team to adapt to generic tools.",
@@ -57,39 +60,33 @@ export function ServicesClient() {
       accent: "bg-white/10"
     },
     {
-      icon: <Users className="w-8 h-8" />,
-      title: "Dedicated Technology Teams",
-      desc: "Extend your internal capabilities with dedicated developers, engineers and technology specialists.",
-      outcomes: ["Faster delivery", "Flexible scaling", "Long-term support"],
-      image: "/iraqbid-5.png",
+      slug: "shopify-development",
+      icon: <ShoppingCart className="w-8 h-8" />,
+      title: "Shopify E-Commerce",
+      desc: "Custom liquid themes, headless Next.js storefronts, and private app extensions for maximum conversion.",
+      outcomes: ["Sub-second load speed", "ERP & POS integration", "High conversion rates"],
+      image: "/babybloom-home.png",
       color: "from-[#3A5CCC] to-[#27324A]",
       accent: "bg-white/10"
     }
   ];
 
   const specializedSystems = [
-    { title: "Inventory Management System", category: "Operations", image: "/assets/services/erp-dashboard.png", gradient: "from-blue-500 to-blue-700", icon: <Package className="w-8 h-8" />, desc: "Track stock levels, orders, sales and deliveries in real-time." },
-    { title: "Stock Management System", category: "Operations", image: "/assets/services/lims-lab.png", gradient: "from-cyan-500 to-cyan-700", icon: <Boxes className="w-8 h-8" />, desc: "Optimize your storage, prevent stockouts, and manage inventory seamlessly." },
-    { title: "POS System", category: "Retail", image: "/textile-pos.png", gradient: "from-teal-500 to-teal-700", icon: <CreditCard className="w-8 h-8" />, desc: "Fast and reliable Point of Sale software for retail and restaurants." },
-    { title: "HR Management System", category: "HR & Payroll", image: "/pulse-admin.png", gradient: "from-emerald-500 to-emerald-700", icon: <Users className="w-8 h-8" />, desc: "Streamline employee records, attendance, performance, and onboarding." },
-    { title: "Payroll System", category: "HR & Payroll", image: "/pulse-client.png", gradient: "from-green-500 to-green-700", icon: <Coins className="w-8 h-8" />, desc: "Automate salary calculations, tax deductions, and pay slip generation." },
-    { title: "School Management System", category: "Education", image: "/assets/services/lms-platform.png", gradient: "from-lime-500 to-lime-700", icon: <GraduationCap className="w-8 h-8" />, desc: "Manage students, teachers, fees, and academics all in one place." },
-    { title: "Clinic Management System", category: "Healthcare", image: "/pulse-reception.png", gradient: "from-yellow-400 to-yellow-600", icon: <Stethoscope className="w-8 h-8" />, desc: "Handle patient records, appointments, and prescriptions efficiently." },
-    { title: "Hospital Management System", category: "Healthcare", image: "/pulse-provider.png", gradient: "from-amber-400 to-amber-600", icon: <Building2 className="w-8 h-8" />, desc: "Comprehensive solution for wards, labs, pharmacy, and hospital operations." },
-    { title: "CRM System", category: "Sales & CRM", image: "/pulse-portal.png", gradient: "from-orange-500 to-orange-700", icon: <HeartHandshake className="w-8 h-8" />, desc: "Build stronger customer relationships and boost your sales pipeline." },
-    { title: "Lead Management System", category: "Sales & CRM", image: "/iraqbid-1.png", gradient: "from-red-500 to-red-700", icon: <Filter className="w-8 h-8" />, desc: "Capture, track, and convert leads into paying customers effortlessly." },
-    { title: "Warehouse Management System", category: "Operations", image: "/iraqbid-2.png", gradient: "from-rose-500 to-rose-700", icon: <Warehouse className="w-8 h-8" />, desc: "Control warehouse operations from inbound receipts to outbound shipping." },
-    { title: "Manufacturing Management System", category: "Enterprise", image: "/iraqbid-3.png", gradient: "from-pink-500 to-pink-700", icon: <Factory className="w-8 h-8" />, desc: "Plan production, track raw materials, and ensure quality control." },
-    { title: "Business Dashboard", category: "Analytics", image: "/iraqbid-4.png", gradient: "from-fuchsia-500 to-fuchsia-700", icon: <LayoutDashboard className="w-8 h-8" />, desc: "Visualize key performance indicators and business metrics in real-time." },
-    { title: "Executive Dashboard", category: "Analytics", image: "/iraqbid-5.png", gradient: "from-purple-500 to-purple-700", icon: <LineChart className="w-8 h-8" />, desc: "High-level insights and analytics tailored for C-suite decision-makers." },
-    { title: "Approval Management System", category: "Workflow", image: "/gharjaisa-menu.png", gradient: "from-violet-500 to-violet-700", icon: <ClipboardCheck className="w-8 h-8" />, desc: "Automate multi-level approval workflows for documents and requests." },
-    { title: "Workflow Automation", category: "Workflow", image: "/babybloom-home.png", gradient: "from-indigo-500 to-indigo-700", icon: <Workflow className="w-8 h-8" />, desc: "Eliminate manual tasks by automating repetitive business processes." },
-    { title: "AI Chatbot", category: "AI & Automation", image: "/agentic_ai_dashboard.png", gradient: "from-blue-400 to-cyan-500", icon: <Bot className="w-8 h-8" />, desc: "Engage customers 24/7 with intelligent, conversational AI assistants." },
-    { title: "AI Agent", category: "AI & Automation", image: "/assets/services/pos-system.png", gradient: "from-emerald-400 to-teal-500", icon: <Cpu className="w-8 h-8" />, desc: "Deploy autonomous AI agents to perform complex, multi-step tasks." },
-    { title: "Customer Support Automation", category: "AI & Automation", image: "/babybloom-shop.png", gradient: "from-orange-400 to-rose-500", icon: <Headset className="w-8 h-8" />, desc: "Resolve tickets faster with AI-driven automated support solutions." },
-    { title: "Billing & Invoice System", category: "Finance", image: "/gharjaisa-home.png", gradient: "from-indigo-400 to-purple-500", icon: <Receipt className="w-8 h-8" />, desc: "Generate professional invoices, track payments, and manage billing." },
-    { title: "Multi-Branch Management System", category: "Enterprise", image: "/pulse-admin.png", gradient: "from-slate-600 to-slate-800", icon: <Network className="w-8 h-8" />, desc: "Centrally manage operations, sales, and staff across multiple locations." },
-    { title: "Business Operations System", category: "Enterprise", image: "/assets/services/erp-dashboard.png", gradient: "from-zinc-500 to-neutral-700", icon: <Briefcase className="w-8 h-8" />, desc: "End-to-end operational software to run your entire enterprise." },
+    { slug: "inventory-management", title: "Inventory Management System", category: "Operations", image: "/assets/services/erp-dashboard.png", gradient: "from-blue-500 to-blue-700", icon: <Package className="w-8 h-8" />, desc: "Track stock levels, orders, sales and deliveries in real-time." },
+    { slug: "inventory-management", title: "Stock Management System", category: "Operations", image: "/assets/services/lims-lab.png", gradient: "from-cyan-500 to-cyan-700", icon: <Boxes className="w-8 h-8" />, desc: "Optimize your storage, prevent stockouts, and manage inventory seamlessly." },
+    { slug: "pos-system", title: "POS System", category: "Retail", image: "/textile-pos.png", gradient: "from-teal-500 to-teal-700", icon: <CreditCard className="w-8 h-8" />, desc: "Fast and reliable Point of Sale software for retail and restaurants." },
+    { slug: "custom-software-development", title: "HR Management System", category: "HR & Payroll", image: "/pulse-admin.png", gradient: "from-emerald-500 to-emerald-700", icon: <Users className="w-8 h-8" />, desc: "Streamline employee records, attendance, performance, and onboarding." },
+    { slug: "erp-development", title: "Payroll System", category: "HR & Payroll", image: "/pulse-client.png", gradient: "from-green-500 to-green-700", icon: <Coins className="w-8 h-8" />, desc: "Automate salary calculations, tax deductions, and pay slip generation." },
+    { slug: "custom-software-development", title: "School Management System", category: "Education", image: "/assets/services/lms-platform.png", gradient: "from-lime-500 to-lime-700", icon: <GraduationCap className="w-8 h-8" />, desc: "Manage students, teachers, fees, and academics all in one place." },
+    { slug: "custom-software-development", title: "Clinic Management System", category: "Healthcare", image: "/pulse-reception.png", gradient: "from-yellow-400 to-yellow-600", icon: <Stethoscope className="w-8 h-8" />, desc: "Handle patient records, appointments, and prescriptions efficiently." },
+    { slug: "erp-development", title: "Hospital Management System", category: "Healthcare", image: "/pulse-provider.png", gradient: "from-amber-400 to-amber-600", icon: <Building2 className="w-8 h-8" />, desc: "Comprehensive solution for wards, labs, pharmacy, and hospital operations." },
+    { slug: "crm-development", title: "CRM System", category: "Sales & CRM", image: "/pulse-portal.png", gradient: "from-orange-500 to-orange-700", icon: <HeartHandshake className="w-8 h-8" />, desc: "Build stronger customer relationships and boost your sales pipeline." },
+    { slug: "crm-development", title: "Lead Management System", category: "Sales & CRM", image: "/iraqbid-1.png", gradient: "from-red-500 to-red-700", icon: <Filter className="w-8 h-8" />, desc: "Capture, track, and convert leads into paying customers effortlessly." },
+    { slug: "inventory-management", title: "Warehouse Management System", category: "Operations", image: "/iraqbid-2.png", gradient: "from-rose-500 to-rose-700", icon: <Warehouse className="w-8 h-8" />, desc: "Control warehouse operations from inbound receipts to outbound shipping." },
+    { slug: "erp-development", title: "Manufacturing Management System", category: "Enterprise", image: "/iraqbid-3.png", gradient: "from-pink-500 to-pink-700", icon: <Factory className="w-8 h-8" />, desc: "Plan production, track raw materials, and ensure quality control." },
+    { slug: "ai-automation", title: "AI Chatbot", category: "AI & Automation", image: "/agentic_ai_dashboard.png", gradient: "from-blue-400 to-cyan-500", icon: <Bot className="w-8 h-8" />, desc: "Engage customers 24/7 with intelligent, conversational AI assistants." },
+    { slug: "ai-automation", title: "AI Agent", category: "AI & Automation", image: "/assets/services/pos-system.png", gradient: "from-emerald-400 to-teal-500", icon: <Cpu className="w-8 h-8" />, desc: "Deploy autonomous AI agents to perform complex, multi-step tasks." },
+    { slug: "ai-automation", title: "Customer Support Automation", category: "AI & Automation", image: "/babybloom-shop.png", gradient: "from-orange-400 to-rose-500", icon: <Headset className="w-8 h-8" />, desc: "Resolve tickets faster with AI-driven automated support solutions." }
   ];
 
   const whyChooseUs = [
@@ -167,9 +164,14 @@ export function ServicesClient() {
                       ))}
                     </ul>
                   </div>
-                  <Link href="/contact" className="relative z-10 inline-flex items-center justify-center w-full bg-white text-slate-900 py-3.5 rounded-xl text-base font-black hover:scale-105 transition-all group">
-                    Get Started <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </Link>
+                  <div className="relative z-10 flex flex-col sm:flex-row gap-3">
+                    <Link href={`/services/${service.slug}`} className="flex-1 inline-flex items-center justify-center bg-white text-slate-900 py-3.5 rounded-xl text-sm font-black hover:scale-105 transition-all group">
+                      Explore Solution <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                    <Link href="/contact" className="inline-flex items-center justify-center bg-slate-900 text-white px-6 py-3.5 rounded-xl text-sm font-bold hover:bg-orange-600 transition-colors">
+                      Book Audit
+                    </Link>
+                  </div>
                 </motion.div>
               ))}
             </div>
@@ -211,14 +213,12 @@ export function ServicesClient() {
                     <p className="text-sm font-semibold text-slate-900/60 leading-relaxed mb-8 flex-grow">
                       {sys.desc}
                     </p>
-                    <a 
-                      href={`https://wa.me/923442013217?text=${encodeURIComponent(`Hi NRT, I am interested in booking a demo for the ${sys.title}.`)}`}
-                      target="_blank" 
-                      rel="noreferrer" 
-                      className="w-full py-4 rounded-xl bg-slate-50 text-slate-900 font-black text-sm uppercase tracking-widest text-center border border-slate-200 hover:bg-orange-600 hover:text-white hover:border-orange-600 transition-all shadow-sm"
+                    <Link 
+                      href={`/services/${sys.slug}`}
+                      className="w-full py-4 rounded-xl bg-slate-50 text-slate-900 font-black text-sm uppercase tracking-widest text-center border border-slate-200 hover:bg-orange-600 hover:text-white hover:border-orange-600 transition-all shadow-sm block"
                     >
-                       Book a Demo
-                    </a>
+                       View Solution Details
+                    </Link>
                   </div>
                 </motion.div>
               ))}
