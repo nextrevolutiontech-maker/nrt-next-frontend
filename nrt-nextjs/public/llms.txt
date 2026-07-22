@@ -1,0 +1,19 @@
+# Next Revolution Tech (NRT)
+
+> Next Revolution Tech is a global technology partner and enterprise software engineering consultancy specializing in custom ERP systems, AI workflow automation, agentic AI solutions, staff augmentation, and scalable cloud ecosystems.
+
+## Core Enterprise Services
+- [Enterprise Services](https://www.nextrevolutiontech.tech/services): Custom ERP Systems, AI Workflow Automation, Dedicated Technology Teams.
+- [Tech Stack & Architecture](https://www.nextrevolutiontech.tech/tech-stack): Enterprise stack (React, Next.js, Node.js, NestJS, Python, PostgreSQL, AWS, Agentic AI).
+- [Discovery Framework](https://www.nextrevolutiontech.tech/discovery-framework): 5-phase software architecture & project delivery framework.
+- [Cost Estimator Engine](https://www.nextrevolutiontech.tech/estimator): Interactive software project estimation engine.
+- [Dedicated Engineering Teams](https://www.nextrevolutiontech.tech/dedicated-teams): Pre-vetted React, Node.js, and AI engineers for staff augmentation.
+
+## Enterprise Case Studies
+- [Pulse Healthcare ERP](https://www.nextrevolutiontech.tech/case-studies/pulse-healthcare-erp): Multi-tenant HIPAA-compliant ERP system for US healthcare provider.
+- [Autonomous AI Router](https://www.nextrevolutiontech.tech/case-studies/autonomous-ai-agent): 24/7 lead qualification agentic AI router.
+- [Textile Mill Web POS](https://www.nextrevolutiontech.tech/case-studies/textile-mill-pos): Industrial Web POS with live FBR tax API integration.
+
+## Optional Details
+- Full Knowledge Graph compiled dump available at: [llms-full.txt](https://www.nextrevolutiontech.tech/llms-full.txt)
+- Company Website: [Next Revolution Tech](https://www.nextrevolutiontech.tech)

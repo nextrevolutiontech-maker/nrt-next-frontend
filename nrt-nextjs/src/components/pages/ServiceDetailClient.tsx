@@ -2,8 +2,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
-import Link from "next/link";
-
 import { ArrowLeft, CheckCircle2 } from "lucide-react";
 import Image from "next/image";
 import { API_BASE_URL } from "@/config";
@@ -41,9 +39,15 @@ const enhancedContent: Record<string, any> = {
 
 export function ServiceDetailClient({ slug: propSlug }: { slug?: string }) {
     const params = useParams();
+    const slug = propSlug || (params?.slug as string);
+    const [service, setService] = useState<any>(null);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+        if (!slug) {
+            setLoading(false);
+            return;
+        }
         fetch(`${API_BASE_URL}/api/services`)
             .then(res => res.json())
             .then(data => {
@@ -56,25 +60,23 @@ export function ServiceDetailClient({ slug: propSlug }: { slug?: string }) {
             .catch(() => setLoading(false));
     }, [slug]);
 
-    if (loading) return <div className="pt-32 text-center">Loading...</div>;
+    if (loading) return <div className="pt-32 text-center font-bold">Loading...</div>;
     if (!service) return (
         <div className="pt-32 text-center min-h-screen bg-[#F2F2F2]">
             <h1 className="text-4xl font-black mb-8">Service Not Found</h1>
-            <Link href="/services" className="btn-glossy">Back to Services</Link>
+            <Link href="/services" className="px-6 py-3 bg-orange-600 text-white rounded-xl font-bold">Back to Services</Link>
         </div>
     );
 
     const extra = enhancedContent[slug || ""] || {
         subtitle: "Premium Technology Services",
-        longDescription: service.description,
-        benefits: Array.isArray(service.features) ? service.features : [],
+        longDescription: service?.description || "",
+        benefits: Array.isArray(service?.features) ? service.features : [],
         process: ["Consultation", "Strategy", "Execution", "Delivery"]
     };
 
     return (
         <div className="min-h-screen bg-white text-slate-900 overflow-x-hidden">
-            
-
             {/* SECTION 1: INTRO - Dark Hero */}
             <section className="pt-32 pb-40 px-4 sm:px-6 lg:px-12 xl:px-24 bg-white text-slate-900 relative overflow-hidden">
               <div className="absolute inset-0 opacity-[0.01] pointer-events-none bg-[url('/noise.svg')]" />

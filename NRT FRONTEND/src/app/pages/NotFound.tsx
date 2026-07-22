@@ -7,6 +7,7 @@ export function NotFound() {
     <div className="pt-32 min-h-screen bg-[#F2F2F2] text-slate-900 flex items-center justify-center text-center px-4">
       <Helmet>
         <title>404 - Page Not Found | Next Revolution Tech</title>
+        <meta name="robots" content="noindex, follow" />
       </Helmet>
 
       <div className="max-w-2xl">

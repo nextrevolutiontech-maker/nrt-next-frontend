@@ -51,6 +51,15 @@ export function BlogDetail() {
       <SEO
         title={`${metadata.title} | NRT Knowledge Hub`}
         description={metadata.description}
+        schemaType="TechArticle"
+        schemaData={{
+          title: metadata.title,
+          description: metadata.description,
+          datePublished: publishDate,
+          dateModified: metadata.updatedAt || publishDate,
+          author: metadata.author || FOUNDER.name,
+          image: metadata.heroImage ? `https://www.nextrevolutiontech.tech${metadata.heroImage}` : undefined
+        }}
       />
 
       {/* Hero Section */}

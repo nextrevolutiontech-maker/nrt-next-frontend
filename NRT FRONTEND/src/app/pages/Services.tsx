@@ -100,8 +100,14 @@ export function Services() {
   return (
     <div className="min-h-screen bg-white text-slate-900 overflow-x-hidden">
       <SEO 
-        title="Our Services" 
-        description="Website, eCommerce, API, automation, mobile app, UI/UX, and cloud services from Next Revolution Tech in Karachi for businesses that need reliable delivery."
+        title="Enterprise Software & AI Automation Services" 
+        description="Custom ERP systems, AI workflow automation, enterprise software engineering, and dedicated technology teams from Next Revolution Tech."
+        schemaType="Service"
+        schemaData={{
+          name: "Enterprise Software & AI Automation Services",
+          description: "Custom ERP systems, AI workflow automation, enterprise software engineering, and dedicated technology teams from Next Revolution Tech.",
+          serviceType: "Enterprise Software & AI Automation"
+        }}
       />
 
       {/* SECTION 1: INTRO - Dark Hero */}

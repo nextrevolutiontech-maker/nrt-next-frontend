@@ -9,7 +9,7 @@ interface SEOProps {
   ogImage?: string;
   ogType?: string;
   twitterHandle?: string;
-  schemaType?: "Organization" | "Article" | "FAQ" | "CaseStudy" | "Person";
+  schemaType?: "Organization" | "Article" | "TechArticle" | "FAQ" | "CaseStudy" | "Person" | "Service" | "SoftwareApplication" | "HowTo";
   schemaData?: any; // For dynamic schema injections
 }
 
@@ -63,7 +63,7 @@ export function SEO({
           "url": siteUrl,
           "potentialAction": {
             "@type": "SearchAction",
-            "target": `${siteUrl}/search?q={search_term_string}`,
+            "target": `${siteUrl}/resources?search={search_term_string}`,
             "query-input": "required name=search_term_string"
           }
         })}
@@ -79,6 +79,7 @@ export function SEO({
           "@id": siteUrl,
           "url": siteUrl,
           "telephone": "+923442013217",
+          "email": "contact@nextrevolutiontech.tech",
           "address": {
             "@type": "PostalAddress",
             "streetAddress": "Gulistan-e-Johar",
@@ -95,21 +96,27 @@ export function SEO({
         })}
       </script>
 
-      {/* 3. Breadcrumb Schema (Always Present based on path) */}
-      {location.pathname !== "/" && (
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": location.pathname.split('/').filter(Boolean).map((path, index, arr) => ({
+      {/* 3. Breadcrumb Schema (Always Present) */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
               "@type": "ListItem",
-              "position": index + 1,
+              "position": 1,
+              "name": "Home",
+              "item": siteUrl
+            },
+            ...location.pathname.split('/').filter(Boolean).map((path, index, arr) => ({
+              "@type": "ListItem",
+              "position": index + 2,
               "name": path.charAt(0).toUpperCase() + path.slice(1).replace(/-/g, ' '),
               "item": `${siteUrl}/${arr.slice(0, index + 1).join('/')}`
             }))
-          })}
-        </script>
-      )}
+          ]
+        })}
+      </script>
 
       {/* 4. Conditional Schemas */}
       {schemaType === "Person" && (
@@ -117,8 +124,8 @@ export function SEO({
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Person",
-            "name": "Muhammad Ahsan Khan",
-            "jobTitle": "Founder & Lead Solutions Architect",
+            "name": schemaData?.name || "Muhammad Ahsan Khan",
+            "jobTitle": schemaData?.jobTitle || "Founder & Lead Solutions Architect",
             "worksFor": {
               "@type": "Organization",
               "name": "Next Revolution Tech"
@@ -131,18 +138,34 @@ export function SEO({
         </script>
       )}
 
-      {schemaType === "CaseStudy" && schemaData && (
+      {schemaType === "Service" && (
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Article", // Schema.org doesn't have an explicit 'CaseStudy' type, Article/TechArticle is standard
-            "headline": schemaData.title,
-            "description": schemaData.description,
-            "author": {
-              "@type": "Person",
-              "name": "Muhammad Ahsan Khan"
+            "@type": "Service",
+            "name": schemaData?.name || title,
+            "description": schemaData?.description || description,
+            "provider": {
+              "@type": "Organization",
+              "name": "Next Revolution Tech",
+              "url": siteUrl
             },
-            "publisher": {
+            "areaServed": "Global",
+            "serviceType": schemaData?.serviceType || "Enterprise Software Development"
+          })}
+        </script>
+      )}
+
+      {schemaType === "SoftwareApplication" && (
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": schemaData?.name || title,
+            "operatingSystem": "Web, Cloud, Cross-platform",
+            "applicationCategory": schemaData?.category || "BusinessApplication",
+            "description": schemaData?.description || description,
+            "author": {
               "@type": "Organization",
               "name": "Next Revolution Tech"
             }
@@ -150,16 +173,47 @@ export function SEO({
         </script>
       )}
 
-      {schemaType === "Article" && (
+      {(schemaType === "Article" || schemaType === "TechArticle" || schemaType === "CaseStudy") && (
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Article",
-            "headline": title,
+            "@type": schemaType === "TechArticle" ? "TechArticle" : "Article",
+            "headline": schemaData?.title || title,
+            "description": schemaData?.description || description,
+            "image": schemaData?.image || ogImage,
+            "datePublished": schemaData?.datePublished || "2026-05-01",
+            "dateModified": schemaData?.dateModified || "2026-07-21",
             "author": {
               "@type": "Person",
-              "name": "Muhammad Ahsan Khan"
-            }
+              "name": schemaData?.author || "Muhammad Ahsan Khan",
+              "jobTitle": "Founder & Lead Solutions Architect"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Next Revolution Tech",
+              "logo": {
+                "@type": "ImageObject",
+                "url": `${siteUrl}/logo.png`
+              }
+            },
+            "mainEntityOfPage": canonicalUrl
+          })}
+        </script>
+      )}
+
+      {schemaType === "HowTo" && schemaData && (
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            "name": schemaData.title || title,
+            "description": schemaData.description || description,
+            "step": (schemaData.steps || []).map((step: any, index: number) => ({
+              "@type": "HowToStep",
+              "position": index + 1,
+              "name": step.name,
+              "text": step.text
+            }))
           })}
         </script>
       )}
@@ -183,3 +237,4 @@ export function SEO({
     </Helmet>
   );
 }
+

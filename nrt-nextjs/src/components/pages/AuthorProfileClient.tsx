@@ -46,7 +46,7 @@ export default function AuthorProfileClient({ slug }: { slug: string }) {
 
            <div className="lg:col-span-4 flex justify-center lg:justify-end">
               <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full border border-slate-300 shadow-2xl overflow-hidden p-2 bg-slate-900/5 backdrop-blur-md">
-                 <Image src={author.image} alt={author.name} className="w-full h-full object-cover rounded-full grayscale hover:grayscale-0 transition-all duration-500" / width={800} height={600} />
+                 <Image src={author.image} alt={author.name} className="w-full h-full object-cover rounded-full grayscale hover:grayscale-0 transition-all duration-500" width={800} height={600} />
               </div>
            </div>
         </div>

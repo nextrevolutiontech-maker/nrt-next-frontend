@@ -90,6 +90,51 @@ export default function RootLayout({
       className={`${inter.variable} ${sora.variable} ${playfair.variable} h-full antialiased overflow-x-hidden`}
       suppressHydrationWarning
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "LocalBusiness",
+                  "@id": "https://www.nextrevolutiontech.tech/#organization",
+                  "name": "Next Revolution Tech",
+                  "url": "https://www.nextrevolutiontech.tech",
+                  "logo": "https://www.nextrevolutiontech.tech/logo.png",
+                  "image": "https://www.nextrevolutiontech.tech/logo.png",
+                  "telephone": "+923442013217",
+                  "email": "contact@nextrevolutiontech.tech",
+                  "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Gulistan-e-Johar",
+                    "addressLocality": "Karachi",
+                    "addressRegion": "Sindh",
+                    "postalCode": "75290",
+                    "addressCountry": "PK"
+                  },
+                  "foundingDate": "2022",
+                  "sameAs": [
+                    "https://www.linkedin.com/company/next-revolution-tech",
+                    "https://twitter.com/nextrevtech"
+                  ]
+                },
+                {
+                  "@type": "WebSite",
+                  "@id": "https://www.nextrevolutiontech.tech/#website",
+                  "url": "https://www.nextrevolutiontech.tech",
+                  "name": "Next Revolution Tech",
+                  "description": "Enterprise Software Development, Custom ERP & Agentic AI Solutions.",
+                  "publisher": {
+                    "@id": "https://www.nextrevolutiontech.tech/#organization"
+                  }
+                }
+              ]
+            })
+          }}
+        />
+      </head>
       <body className="min-h-full flex flex-col overflow-x-hidden" suppressHydrationWarning>{children}</body>
     </html>
   );

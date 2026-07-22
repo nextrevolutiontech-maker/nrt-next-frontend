@@ -83,7 +83,12 @@ export function CaseStudyDetail() {
         title={`${study.title} | Case Study`}
         description={study.metaDesc}
         schemaType="CaseStudy"
-        schemaData={{ title: study.title, description: study.metaDesc }}
+        schemaData={{ 
+          title: study.title, 
+          description: study.metaDesc,
+          image: study.heroImage,
+          author: "Muhammad Ahsan Khan"
+        }}
       />
 
       {/* Hero Section */}

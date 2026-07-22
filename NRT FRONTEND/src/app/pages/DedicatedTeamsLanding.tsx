@@ -40,6 +40,12 @@ export function DedicatedTeamsLanding() {
       <SEO
         title="Hire Dedicated Engineering Teams | Next Revolution Tech"
         description="Extend your engineering capabilities with pre-vetted React, Node, and AI engineers without the overhead."
+        schemaType="Service"
+        schemaData={{
+          name: "Dedicated Engineering Teams & Staff Augmentation",
+          description: "Extend your engineering capabilities with pre-vetted React, Node, and AI engineers without the overhead.",
+          serviceType: "Staff Augmentation & Dedicated Engineering"
+        }}
       />
 
       {/* HERO SECTION */}

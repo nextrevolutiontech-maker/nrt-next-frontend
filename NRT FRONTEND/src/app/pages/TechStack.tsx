@@ -60,8 +60,14 @@ export function TechStack() {
   return (
     <div className="min-h-screen bg-white text-slate-900 overflow-hidden">
       <SEO
-        title="Technology Stack | NRT"
+        title="Technology Stack & Infrastructure | Next Revolution Tech"
         description="Explore the enterprise-grade technology stack used by Next Revolution Tech to build scalable software, AI agents, and robust cloud infrastructure."
+        schemaType="Service"
+        schemaData={{
+          name: "Enterprise Tech Stack & Software Architecture Services",
+          description: "Explore the enterprise-grade technology stack used by Next Revolution Tech to build scalable software, AI agents, and robust cloud infrastructure.",
+          serviceType: "Software Engineering & Cloud Architecture"
+        }}
       />
 
       <section className="pt-32 pb-40 px-4 sm:px-6 lg:px-12 xl:px-24 bg-white text-slate-900 relative overflow-hidden">

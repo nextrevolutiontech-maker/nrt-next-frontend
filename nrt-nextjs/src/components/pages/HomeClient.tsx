@@ -389,7 +389,7 @@ export function HomeClient() {
                          src={imgUrl}
                          alt={`Trusted client ${i + 1}`}
                          className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-[3px] border-white shadow-md object-cover hover:-translate-y-1 hover:z-10 relative transition-all duration-300"
-                       / width={48} height={48} />
+                         width={48} height={48} />
                      ))}
                   </div>
                    <div className="space-y-1 text-left">
@@ -605,7 +605,7 @@ export function HomeClient() {
                 { name: "WooCommerce", logo: "https://cdn.worldvectorlogo.com/logos/woocommerce.svg" }
               ].map((brand, i) => (
                 <div key={i} className="flex items-center gap-3.5 group shrink-0">
-                  <Image src={brand.logo} alt={brand.name} loading="lazy" className="h-6 sm:h-7 w-auto transition-transform duration-500 group-hover:scale-110 grayscale-[50%] group-hover:grayscale-0" / width={800} height={600} />
+                  <Image src={brand.logo} alt={brand.name} loading="lazy" className="h-6 sm:h-7 w-auto transition-transform duration-500 group-hover:scale-110 grayscale-[50%] group-hover:grayscale-0" width={800} height={600} />
                   <span className="text-sm font-semibold tracking-tighter text-slate-500 group-hover:text-[#0f172a] transition-colors uppercase">{brand.name}</span>
                 </div>
               ))}
@@ -969,7 +969,7 @@ export function HomeClient() {
                       alt={project.title} 
                       loading="lazy"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
-                    / width={800} height={600} />
+                    width={800} height={600} />
                     <span className="absolute bottom-4 left-4 bg-orange-600/80 backdrop-blur-md text-white text-[9px] font-black uppercase tracking-[0.2em] px-4 py-1.5 rounded-lg">
                       {project.category}
                     </span>
@@ -1146,7 +1146,7 @@ export function HomeClient() {
                           </Link>
                           <div className="flex -space-x-3">
                              {[1, 2, 3, 4].map((i) => (
-                               <Image key={i} src={`https://i.pravatar.cc/100?img=${i+40}`} alt="Expert" loading="lazy" className="w-12 h-12 rounded-full border-4 border-[#0F172A] shadow-xl" / width={48} height={48} />
+                               <Image key={i} src={`https://i.pravatar.cc/100?img=${i+40}`} alt="Expert" loading="lazy" className="w-12 h-12 rounded-full border-4 border-[#0F172A] shadow-xl" width={48} height={48} />
                              ))}
                              <div className="w-12 h-12 rounded-full bg-white/5 border-4 border-[#0F172A] flex items-center justify-center text-[10px] font-black text-[#0f172a]/40">+50</div>
                           </div>
@@ -1244,7 +1244,7 @@ export function HomeClient() {
                       alt={FOUNDER.name} 
                       loading="lazy"
                       className="w-full h-full object-cover object-center" 
-                    / width={800} height={600} />
+                    width={800} height={600} />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#080B11]/50 to-transparent pointer-events-none" />
                   </div>
                   <h3 className="text-3xl font-black text-[#0f172a] mb-2">{FOUNDER.name}</h3>
@@ -1484,7 +1484,7 @@ function FAQItem({ faq, index }: { faq: any, index: number }) {
         {/* Floating Hover Image */}
         {faq.img && (
           <div className="absolute right-28 top-1/2 -translate-y-1/2 w-48 h-48 rounded-full overflow-hidden opacity-0 group-hover:opacity-100 translate-x-4 group-hover:translate-x-0 transition-all duration-700 pointer-events-none z-20 hidden xl:flex items-center justify-center pointer-events-none mix-blend-multiply" style={{ maskImage: 'radial-gradient(circle, black 50%, transparent 70%)', WebkitMaskImage: 'radial-gradient(circle, black 50%, transparent 70%)' }}>
-            <Image src={faq.img} alt="" className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000" / width={800} height={600} />
+            <Image src={faq.img} alt="" className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000" width={800} height={600} />
           </div>
         )}
 

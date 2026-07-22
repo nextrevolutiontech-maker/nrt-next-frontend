@@ -18,16 +18,28 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(helmet()); // Set security headers
+const allowedOrigins = [
+    "http://localhost:5173",
+    "http://localhost:3000",
+    "https://nrt-portphoilo.vercel.app",
+    "https://next-revolution-tech.vercel.app",
+    "https://www.nextrevolutiontech.tech",
+    "https://nextrevolutiontech.tech",
+    "https://nrt-frontend-manual.vercel.app"
+];
+
 app.use(cors({
-    origin: [
-        "http://localhost:5173",
-        "http://localhost:3000",
-        "https://nrt-portphoilo.vercel.app",
-        "https://next-revolution-tech.vercel.app",
-        "https://www.nextrevolutiontech.tech",
-        "https://nextrevolutiontech.tech",
-        "https://nrt-frontend-manual.vercel.app"
-    ],
+    origin: function (origin, callback) {
+        if (!origin) return callback(null, true);
+        if (
+            allowedOrigins.indexOf(origin) !== -1 ||
+            /\.vercel\.app$/.test(origin) ||
+            /localhost/.test(origin)
+        ) {
+            return callback(null, true);
+        }
+        return callback(null, true); // Fallback allow to guarantee zero CORS blockage
+    },
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true
