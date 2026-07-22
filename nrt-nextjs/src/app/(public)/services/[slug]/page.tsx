@@ -5,8 +5,15 @@ export const revalidate = 86400; // 24 hours
 
 const KNOWN_SERVICES = [
   "custom-software-development",
+  "erp-development",
   "saas-development",
-  "ai-automation"
+  "ai-automation",
+  "shopify-development",
+  "mobile-app-development",
+  "cloud-devops",
+  "pos-system",
+  "crm-development",
+  "inventory-management"
 ];
 
 export async function generateStaticParams() {

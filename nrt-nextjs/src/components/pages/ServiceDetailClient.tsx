@@ -9,6 +9,7 @@ import { motion } from "motion/react";
 
 const enhancedContent: Record<string, any> = {
     "custom-software-development": {
+        title: "Custom Software Development",
         subtitle: "Tailored Solutions for Complex Challenges",
         tldr: "Custom software development builds bespoke applications designed specifically for your unique operational needs, ensuring perfect integration and absolute ownership.",
         targetAudience: "Enterprise companies outgrowing off-the-shelf software and needing proprietary workflows.",
@@ -17,7 +18,18 @@ const enhancedContent: Record<string, any> = {
         benefits: ["Full ownership of code", "Seamless integration", "Scalable architecture", "Automated workflows"],
         process: ["Discovery", "Development", "Testing", "Support"]
     },
+    "erp-development": {
+        title: "Enterprise ERP Software Development",
+        subtitle: "Centralized Business Operations & Inventory Intelligence",
+        tldr: "Bespoke ERP development replaces fragmented spreadsheets with unified real-time inventory, financial accounting, procurement, and HR analytics.",
+        targetAudience: "Growing manufacturing, retail, healthcare, and logistics enterprises.",
+        pricingFactors: "Module count, Database complexity, Legacy migration, and Custom integrations.",
+        longDescription: "Eliminate manual data entry errors and inventory stockouts with a customized ERP system engineered specifically for your business operations.",
+        benefits: ["Zero per-user licensing fees", "Real-time multi-location sync", "Automated financial reconciliation", "Role-based security"],
+        process: ["Operational Audit", "System Architecture", "Module Sprints", "Deployment"]
+    },
     "saas-development": {
+        title: "SaaS Platform Development",
         subtitle: "From Concept to Market Leader",
         tldr: "End-to-end SaaS application development providing secure, scalable, multi-tenant architectures ready for subscription monetization.",
         targetAudience: "Startups and enterprises launching new digital products or migrating legacy tools to the cloud.",
@@ -27,13 +39,74 @@ const enhancedContent: Record<string, any> = {
         process: ["MVP Strategy", "UX Design", "Build", "Scale"]
     },
     "ai-automation": {
-        subtitle: "Leverage Artificial Intelligence",
+        title: "AI & Workflow Automation",
+        subtitle: "Leverage Autonomous Agentic Artificial Intelligence",
         tldr: "Integrate Agentic AI and machine learning models to automate repetitive tasks, analyze data, and create intelligent customer support systems.",
         targetAudience: "Businesses handling high-volume repetitive tasks, customer inquiries, or massive datasets.",
         pricingFactors: "Custom model training, API tokens usage, Data sanitation, and Workflow complexity.",
         longDescription: "Automate repetitive tasks and gain predictive insights with our custom AI solutions.",
-        benefits: ["24/7 AI Support", "Data-driven decisions", "Reduced costs", "Predictive models"],
+        benefits: ["24/7 AI Support", "Data-driven decisions", "Reduced operational costs", "Predictive models"],
         process: ["Assessment", "Training", "Integration", "Monitoring"]
+    },
+    "shopify-development": {
+        title: "Shopify E-Commerce Development",
+        subtitle: "High-Converting Custom Stores & App Extensions",
+        tldr: "Custom Shopify Liquid themes, headless Next.js storefronts, and private Shopify app extensions designed for maximum speed and conversion.",
+        targetAudience: "D2C brands and enterprise retailers aiming to scale online revenue.",
+        pricingFactors: "Custom design depth, ERP/POS synchronization, and checkout customizations.",
+        longDescription: "Scale your e-commerce revenue with fast, responsive, and conversion-optimized custom Shopify themes and headless integrations.",
+        benefits: ["Sub-second page loading speed", "Custom POS & ERP sync", "Headless Next.js storefronts", "Conversion rate optimization"],
+        process: ["UI/UX Design", "Liquid/Next.js Build", "ERP Integration", "Launch"]
+    },
+    "mobile-app-development": {
+        title: "Mobile App Development (iOS & Android)",
+        subtitle: "Native Performance with Cross-Platform Speed",
+        tldr: "High-performance React Native and Flutter mobile applications for iOS and Android with offline-first database synchronization.",
+        targetAudience: "Businesses expanding customer engagement or field worker mobile productivity.",
+        pricingFactors: "Platform support (iOS/Android), Offline sync depth, and API complexity.",
+        longDescription: "Build mobile applications that deliver native fluid performance, real-time push notifications, and offline data sync.",
+        benefits: ["Cross-platform iOS & Android code", "Offline-first local database", "Real-time telemetry", "App Store approval guarantee"],
+        process: ["UI Wireframing", "React Native Sprint", "API Connection", "App Store Publish"]
+    },
+    "cloud-devops": {
+        title: "Cloud & DevOps Engineering",
+        subtitle: "Automated CI/CD Pipelines & High-Availability Infrastructure",
+        tldr: "Kubernetes, Docker, AWS, and Vercel infrastructure setup with zero-downtime automated deployments and continuous uptime monitoring.",
+        targetAudience: "SaaS products and enterprise applications handling high traffic loads.",
+        pricingFactors: "Cloud architecture scale, Traffic concurrency, and Monitoring compliance.",
+        longDescription: "Maintain 99.99% system availability with automated cloud scaling, database replication, and continuous CI/CD pipelines.",
+        benefits: ["Zero-downtime deployments", "Automated database backups", "Sub-second global latency", "24/7 server monitoring"],
+        process: ["Infrastructure Audit", "Containerization", "CI/CD Pipeline", "24/7 SLA"]
+    },
+    "pos-system": {
+        title: "Point of Sale (POS) Systems",
+        subtitle: "Offline-First Retail & Multi-Branch Terminals",
+        tldr: "Fast, reliable retail POS software with offline terminal synchronization, barcode scanning, and automated tax authority integration.",
+        targetAudience: "Multi-branch retail outlets, restaurants, and wholesale distributors.",
+        pricingFactors: "Terminal license count, Hardware integrations, and Tax API webhooks.",
+        longDescription: "Process customer transactions in milliseconds with offline-first POS software that syncs automatically with central inventory.",
+        benefits: ["Offline transaction queue", "FBR / Local tax API sync", "Multi-terminal management", "Instant inventory deduction"],
+        process: ["Hardware Setup", "POS Software Build", "Tax API Hook", "Staff Training"]
+    },
+    "crm-development": {
+        title: "Custom CRM Software Development",
+        subtitle: "Intelligent Lead Tracking & Automated Pipeline Management",
+        tldr: "Custom Customer Relationship Management software tailored to your sales process, featuring WhatsApp integration and automated follow-ups.",
+        targetAudience: "B2B service providers, real estate firms, and enterprise sales teams.",
+        pricingFactors: "Pipeline complexity, Multi-channel messaging, and Reporting analytics.",
+        longDescription: "Never lose another lead. Track customer interactions, automate follow-up emails/WhatsApp messages, and analyze sales conversion funnels.",
+        benefits: ["Automated WhatsApp lead capture", "Custom deal pipelines", "Team performance analytics", "Seamless ERP integration"],
+        process: ["Pipeline Design", "CRM Development", "API Integrations", "Rollout"]
+    },
+    "inventory-management": {
+        title: "Inventory & Warehouse Management Systems",
+        subtitle: "Real-Time Stock Telemetry & Automated Reordering",
+        tldr: "Advanced inventory control software featuring barcode intake, batch tracking, multi-warehouse transfer management, and automated stockout alerts.",
+        targetAudience: "E-commerce brands, distributors, and manufacturing plants.",
+        pricingFactors: "Warehouse locations, Barcode hardware integration, and Stock SKU volume.",
+        longDescription: "Eliminate stockouts and overstock costs with real-time barcode tracking across multiple warehouse locations.",
+        benefits: ["Real-time barcode inventory intake", "Automated stockout alerts", "Multi-warehouse stock transfer", "Batch & Expiry tracking"],
+        process: ["Warehouse Mapping", "Inventory Engine Build", "Hardware Integration", "Go-Live"]
     }
 };
 
