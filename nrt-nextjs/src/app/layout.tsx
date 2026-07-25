@@ -135,6 +135,26 @@ export default function RootLayout({
             }),
           }}
         />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.getRegistrations().then(function(registrations) {
+                  for (let registration of registrations) {
+                    registration.unregister();
+                  }
+                });
+                if ('caches' in window) {
+                  caches.keys().then(function(names) {
+                    for (let name of names) {
+                      caches.delete(name);
+                    }
+                  });
+                }
+              }
+            `,
+          }}
+        />
       </head>
       <body className="min-h-full flex flex-col overflow-x-hidden" suppressHydrationWarning>{children}</body>
     </html>
