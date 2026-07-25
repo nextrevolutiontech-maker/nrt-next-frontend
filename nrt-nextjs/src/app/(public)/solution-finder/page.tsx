@@ -29,7 +29,7 @@ export default function SolutionFinderPage() {
             name: "NRT Business Solution Finder",
             description:
               "An interactive diagnostic tool that generates a custom AI & ERP digital transformation roadmap based on your business inputs.",
-            url: "https://www.nextrevolutiontech.com/solution-finder",
+            url: "https://www.nextrevolutiontech.tech/solution-finder",
             applicationCategory: "BusinessApplication",
             operatingSystem: "Web",
             offers: {

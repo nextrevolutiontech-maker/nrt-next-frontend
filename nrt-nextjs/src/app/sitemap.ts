@@ -4,7 +4,7 @@ import { getAllContent } from '@/core/content-engine/loader'
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.nextrevolutiontech.tech'
   
-  // Static Routes
+  // 14 Static Routes
   const staticRoutes = [
     '',
     '/about',
@@ -23,8 +23,78 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
-    changeFrequency: (route === '' || route === '/blog' || route === '/services') ? 'daily' : 'weekly' as any,
+    changeFrequency: (route === '' || route === '/blog' || route === '/services') ? ('daily' as const) : ('weekly' as const),
     priority: route === '' ? 1.0 : (route === '/services' || route === '/pricing' ? 0.9 : 0.8),
+  }))
+
+  // 10 Service Pages
+  const services = [
+    "custom-software-development",
+    "erp-development",
+    "saas-development",
+    "ai-automation",
+    "shopify-development",
+    "mobile-app-development",
+    "cloud-devops",
+    "pos-system",
+    "crm-development",
+    "inventory-management"
+  ].map(slug => ({
+    url: `${baseUrl}/services/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.9,
+  }))
+
+  // 6 Industry Landing Pages
+  const industries = [
+    "healthcare",
+    "manufacturing",
+    "retail",
+    "logistics",
+    "education",
+    "real-estate"
+  ].map(slug => ({
+    url: `${baseUrl}/industries/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }))
+
+  // 3 Comparison Pages
+  const comparisons = [
+    "custom-erp-vs-odoo",
+    "erp-vs-excel",
+    "ai-agent-vs-chatbot"
+  ].map(slug => ({
+    url: `${baseUrl}/comparisons/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }))
+
+  // 3 Glossary Terms
+  const glossary = [
+    "what-is-erp",
+    "what-is-agentic-ai",
+    "what-is-saas"
+  ].map(slug => ({
+    url: `${baseUrl}/glossary/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }))
+
+  // 3 Author Profile Pages
+  const authors = [
+    "muhammad-ahsan-khan",
+    "muzammil-khan",
+    "taha-siraj"
+  ].map(slug => ({
+    url: `${baseUrl}/author/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
   }))
 
   // Dynamic MDX Content (Blog & Case Studies)
@@ -42,17 +112,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   })
 
-  // Dynamic Services
-  const services = [
-    "custom-software-development",
-    "saas-development",
-    "ai-automation"
-  ].map(slug => ({
-      url: `${baseUrl}/services/${slug}`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.9,
-  }))
-
-  return [...staticRoutes, ...services, ...contentRoutes]
+  return [
+    ...staticRoutes,
+    ...services,
+    ...industries,
+    ...comparisons,
+    ...glossary,
+    ...authors,
+    ...contentRoutes
+  ]
 }

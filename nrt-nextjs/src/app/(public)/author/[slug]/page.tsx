@@ -60,8 +60,8 @@ export default async function AuthorPage({ params }: { params: Promise<{ slug: s
             "name": author.name,
             "jobTitle": author.role,
             "description": author.bio,
-            "image": `https://www.nextrevolutiontech.com${author.image}`,
-            "url": `https://www.nextrevolutiontech.com/author/${resolvedParams.slug}`,
+            "image": `https://www.nextrevolutiontech.tech${author.image}`,
+            "url": `https://www.nextrevolutiontech.tech/author/${resolvedParams.slug}`,
             "sameAs": [
               author.linkedin
             ],

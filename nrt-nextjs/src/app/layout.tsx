@@ -70,9 +70,6 @@ export const metadata: Metadata = {
     icon: "/favicon.ico",
     apple: "/logo.png",
   },
-  alternates: {
-    canonical: "/",
-  },
   openGraph: {
     type: "website",
     siteName: "Next Revolution Tech",

@@ -32,11 +32,11 @@ export default function DedicatedTeamsPage() {
             provider: {
               "@type": "Organization",
               name: "Next Revolution Tech",
-              url: "https://www.nextrevolutiontech.com",
+              url: "https://www.nextrevolutiontech.tech",
             },
             serviceType: "Staff Augmentation",
             areaServed: "Worldwide",
-            url: "https://www.nextrevolutiontech.com/dedicated-teams",
+            url: "https://www.nextrevolutiontech.tech/dedicated-teams",
           }),
         }}
       />

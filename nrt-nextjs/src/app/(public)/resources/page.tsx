@@ -43,12 +43,12 @@ export default function ResourcesPage() {
                 {
                   "@type": "ListItem",
                   "position": 1,
-                  "url": "https://www.nextrevolutiontech.tech/resources/digital-wallet-architecture"
+                  "url": "https://www.nextrevolutiontech.tech/blog/digital-wallet-architecture"
                 },
                 {
                   "@type": "ListItem",
                   "position": 2,
-                  "url": "https://www.nextrevolutiontech.tech/resources/what-is-manufacturing-erp"
+                  "url": "https://www.nextrevolutiontech.tech/blog/what-is-manufacturing-erp"
                 }
               ]
             },
