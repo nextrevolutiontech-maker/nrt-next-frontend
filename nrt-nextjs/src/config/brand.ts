@@ -3,8 +3,8 @@
  * To swap the founder photo: place the file in /public and update imageUrl.
  */
 export const FOUNDER = {
-  name: "Ahsan Khan",
-  title: "Founder & Lead Architect",
+  name: "Muhammad Ahsan Khan",
+  title: "Founder & Lead Software Architect",
   linkedInUrl: "https://www.linkedin.com/in/muhammad-ahsan-khan-founder-61a51032a",
   /** Replace with "/founder-ahsan-khan.jpg" when the professional photo is ready */
   imageUrl: "/ceo.png",

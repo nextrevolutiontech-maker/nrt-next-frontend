@@ -71,12 +71,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       "name": metadata.author || FOUNDER.name
     },
     "publisher": {
-      "@type": "Organization",
-      "name": "Next Revolution Tech",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.nextrevolutiontech.tech/nrt-logo.png"
-      }
+      "@id": "https://www.nextrevolutiontech.tech/#organization"
     },
     "datePublished": metadata.publishedAt,
     "dateModified": metadata.updatedAt || metadata.publishedAt,

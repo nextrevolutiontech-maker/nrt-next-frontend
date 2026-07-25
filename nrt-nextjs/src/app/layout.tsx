@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Sora, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import { getOrganizationSchema, getProfessionalServiceSchema, getWebSiteSchema } from "@/lib/jsonld";
 
 export const viewport: Viewport = {
   themeColor: "#EA580C",
@@ -127,63 +128,11 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@graph": [
-                {
-                  "@type": "Organization",
-                  "@id": "https://www.nextrevolutiontech.tech/#organization",
-                  "name": "Next Revolution Tech",
-                  "legalName": "Next Revolution Tech",
-                  "url": "https://www.nextrevolutiontech.tech",
-                  "logo": "https://www.nextrevolutiontech.tech/logo.png",
-                  "image": "https://www.nextrevolutiontech.tech/og-image.png",
-                  "telephone": "+923442013217",
-                  "email": "contact@nextrevolutiontech.tech",
-                  "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "Gulistan-e-Johar",
-                    "addressLocality": "Karachi",
-                    "addressRegion": "Sindh",
-                    "postalCode": "75290",
-                    "addressCountry": "PK"
-                  },
-                  "foundingDate": "2022",
-                  "founder": {
-                    "@type": "Person",
-                    "name": "Muhammad Ahsan Khan",
-                    "jobTitle": "Founder & Lead Architect",
-                    "url": "https://www.nextrevolutiontech.tech/author/muhammad-ahsan-khan"
-                  },
-                  "sameAs": [
-                    "https://www.linkedin.com/company/nextrevolutiontech",
-                    "https://twitter.com/nextrevtech",
-                    "https://github.com/nextrevolutiontech-maker"
-                  ]
-                },
-                {
-                  "@type": "LocalBusiness",
-                  "@id": "https://www.nextrevolutiontech.tech/#localbusiness",
-                  "name": "Next Revolution Tech",
-                  "image": "https://www.nextrevolutiontech.tech/og-image.png",
-                  "url": "https://www.nextrevolutiontech.tech",
-                  "telephone": "+923442013217",
-                  "priceRange": "$$$",
-                  "address": {
-                    "@type": "PostalAddress",
-                    "addressLocality": "Karachi",
-                    "addressCountry": "PK"
-                  }
-                },
-                {
-                  "@type": "WebSite",
-                  "@id": "https://www.nextrevolutiontech.tech/#website",
-                  "url": "https://www.nextrevolutiontech.tech",
-                  "name": "Next Revolution Tech",
-                  "description": "Next Revolution Tech helps businesses scale with ERP systems, AI automation, custom software development, SaaS platforms, Shopify solutions, and dedicated engineering teams.",
-                  "publisher": {
-                    "@id": "https://www.nextrevolutiontech.tech/#organization"
-                  }
-                }
-              ]
-            })
+                getOrganizationSchema(),
+                getProfessionalServiceSchema(),
+                getWebSiteSchema(),
+              ],
+            }),
           }}
         />
       </head>

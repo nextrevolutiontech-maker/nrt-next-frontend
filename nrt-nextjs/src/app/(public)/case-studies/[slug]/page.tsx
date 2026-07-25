@@ -58,16 +58,10 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
     "headline": metadata.title,
     "description": metadata.description,
     "author": {
-      "@type": "Organization",
-      "name": "Next Revolution Tech"
+      "@id": "https://www.nextrevolutiontech.tech/#organization"
     },
     "publisher": {
-      "@type": "Organization",
-      "name": "Next Revolution Tech",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.nextrevolutiontech.tech/nrt-logo.png"
-      }
+      "@id": "https://www.nextrevolutiontech.tech/#organization"
     },
     "mainEntityOfPage": {
       "@type": "WebPage",

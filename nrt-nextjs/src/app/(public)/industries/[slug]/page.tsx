@@ -200,9 +200,7 @@ export default function IndustryPage({ params }: { params: { slug: string } }) {
                 "@type": "Service",
                 "name": industry.title,
                 "provider": {
-                  "@type": "Organization",
-                  "name": "Next Revolution Tech",
-                  "url": "https://www.nextrevolutiontech.tech"
+                  "@id": "https://www.nextrevolutiontech.tech/#organization"
                 },
                 "description": industry.description
               },

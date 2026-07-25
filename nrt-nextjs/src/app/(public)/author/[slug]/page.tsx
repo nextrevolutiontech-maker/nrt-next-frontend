@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import AuthorProfileClient from "@/components/pages/AuthorProfileClient";
 import { AUTHORS } from "@/data/authors";
+import { SITE_URL } from "@/lib/jsonld";
 
 export async function generateStaticParams() {
   return Object.keys(AUTHORS).map((slug) => ({
@@ -42,7 +43,6 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function AuthorPage({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
-  console.log("SLUG ACCESSED:", resolvedParams.slug);
   const author = AUTHORS[resolvedParams.slug];
 
   if (!author) {
@@ -60,14 +60,11 @@ export default async function AuthorPage({ params }: { params: Promise<{ slug: s
             "name": author.name,
             "jobTitle": author.role,
             "description": author.bio,
-            "image": `https://www.nextrevolutiontech.tech${author.image}`,
-            "url": `https://www.nextrevolutiontech.tech/author/${resolvedParams.slug}`,
-            "sameAs": [
-              author.linkedin
-            ],
+            "image": `${SITE_URL}${author.image}`,
+            "url": `${SITE_URL}/author/${resolvedParams.slug}`,
+            "sameAs": author.linkedin ? [author.linkedin] : [],
             "worksFor": {
-              "@type": "Organization",
-              "name": "Next Revolution Tech"
+              "@id": `${SITE_URL}/#organization`
             }
           })
         }}

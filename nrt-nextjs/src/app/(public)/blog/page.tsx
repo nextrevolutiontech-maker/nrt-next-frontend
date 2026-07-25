@@ -33,9 +33,7 @@ export default function BlogIndexPage() {
     "description": "Explore practical guides, architecture deep dives, and expert insights on ERP systems, AI automation, SaaS development, and modern software engineering.",
     "url": "https://www.nextrevolutiontech.tech/blog",
     "publisher": {
-      "@type": "Organization",
-      "name": "Next Revolution Tech",
-      "url": "https://www.nextrevolutiontech.tech"
+      "@id": "https://www.nextrevolutiontech.tech/#organization"
     }
   };
 

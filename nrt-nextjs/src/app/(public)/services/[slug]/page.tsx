@@ -46,8 +46,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
     "@type": "Service",
     "name": formattedTitle,
     "provider": {
-      "@type": "Organization",
-      "name": "Next Revolution Tech"
+      "@id": "https://www.nextrevolutiontech.tech/#organization"
     },
     "description": `Enterprise-grade ${formattedTitle} services.`,
     "url": `https://www.nextrevolutiontech.tech/services/${slug}`

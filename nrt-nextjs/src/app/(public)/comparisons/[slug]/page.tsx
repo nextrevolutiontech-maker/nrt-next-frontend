@@ -114,9 +114,7 @@ export default function ComparisonPage({ params }: { params: { slug: string } })
                 "headline": comp.title,
                 "description": comp.summary,
                 "publisher": {
-                  "@type": "Organization",
-                  "name": "Next Revolution Tech",
-                  "url": "https://www.nextrevolutiontech.tech"
+                  "@id": "https://www.nextrevolutiontech.tech/#organization"
                 }
               },
               {
