@@ -9,9 +9,69 @@ import { InteractiveHero3D } from "@/components/ui/InteractiveHero3D";
 
 export function PricingClient() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const [activeTab, setActiveTab] = useState<string>("pos");
+  const [activeTab, setActiveTab] = useState<string>("teams");
 
   const pricingCategories = [
+    {
+      id: "teams",
+      name: "Dedicated Teams",
+      packages: [
+        {
+          name: "Weekly Sprint Dev",
+          subtitle: "Dedicated Senior Engineer for Quick Sprints & Features",
+          price: "PKR 95,000",
+          period: "/ Week ($350)",
+          color: "from-blue-600 to-indigo-800",
+          highlight: false,
+          features: [
+            "1 Dedicated Senior Developer (React, Next.js, Node, Python)",
+            "40 Hours / Week Allocation",
+            "Direct Integration into Slack & Jira",
+            "Daily Standups & Code Commits",
+            "100% IP & Code Ownership",
+            "Zero Long-Term Contract Required"
+          ],
+          cta: "Hire Weekly Dev on WhatsApp",
+          message: "Hi NRT, I want to hire a Weekly Dedicated Developer (PKR 95k/week)."
+        },
+        {
+          name: "Monthly Dedicated Dev",
+          subtitle: "Full-Time Senior Engineer Embedded in Your Squad",
+          price: "PKR 380,000",
+          period: "/ Month ($1,400)",
+          color: "from-emerald-500 to-green-700",
+          highlight: true,
+          features: [
+            "1 Dedicated Full-Time Senior Engineer (160 Hours/Month)",
+            "Timezone Aligned Working Hours",
+            "Direct GitHub / GitLab Commits & Daily Standups",
+            "Full-Stack Capabilities (Next.js, Node, PostgreSQL, AI)",
+            "Tech Lead & QA Supervision Included",
+            "14-Day Risk-Free Trial & Replacement Guarantee"
+          ],
+          cta: "Hire Monthly Dev on WhatsApp",
+          message: "Hi NRT, I want to hire a Monthly Dedicated Developer (PKR 380k/month)."
+        },
+        {
+          name: "Full Engineering Pod",
+          subtitle: "Complete Tech Lead + Senior Devs + QA Squad",
+          price: "PKR 1,050,000",
+          period: "/ Month ($3,800)",
+          color: "from-orange-500 to-red-600",
+          highlight: false,
+          features: [
+            "1 Solutions Architect / Tech Lead",
+            "2 Senior Full-Stack Developers (Frontend + Backend)",
+            "1 AI Automation Specialist / QA Engineer",
+            "Full Sprint Planning, CI/CD & Architecture Oversight",
+            "Unlimited Feature Velocity & Priority SLA Support",
+            "Dedicated Account Director & Weekly Executive Sync"
+          ],
+          cta: "Book Engineering Pod Call",
+          message: "Hi NRT, I want to hire a Full Engineering Pod (PKR 1.05M/month)."
+        }
+      ]
+    },
     {
       id: "pos",
       name: "POS & Inventory",
@@ -279,7 +339,7 @@ export function PricingClient() {
       
 
       {/* Hero */}
-      <section className="pt-32 pb-40 px-4 sm:px-6 lg:px-12 xl:px-24 bg-white text-slate-900 relative overflow-hidden">
+      <section className="pt-24 sm:pt-28 pb-16 px-4 sm:px-6 lg:px-12 xl:px-24 bg-white text-slate-900 relative overflow-hidden">
         <InteractiveHero3D />
         <div className="absolute inset-0 opacity-[0.01] pointer-events-none bg-[url('/noise.svg')]" />
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-orange-600/10 rounded-full blur-[120px] -z-10 translate-x-1/2 -translate-y-1/2" />
@@ -295,23 +355,21 @@ export function PricingClient() {
       </section>
 
       {/* Tabs */}
-      <section className="py-8 bg-white border-b border-slate-200 sticky top-0 z-40 bg-white/90 backdrop-blur-md">
-        <div className="mx-auto max-w-7xl px-4 flex justify-start sm:justify-center overflow-x-auto no-scrollbar pb-4 sm:pb-0">
-          <div className="bg-slate-100 p-1.5 rounded-2xl flex items-center shadow-inner gap-1 min-w-max">
-            {pricingCategories.map(cat => (
-              <button
-                key={cat.id}
-                onClick={() => setActiveTab(cat.id)}
-                className={`px-6 py-3 rounded-xl text-sm font-black uppercase tracking-widest transition-all ${
-                  activeTab === cat.id 
-                  ? "bg-white text-orange-600 shadow-md" 
-                  : "text-slate-500 hover:text-slate-900"
-                }`}
-              >
-                {cat.name}
-              </button>
-            ))}
-          </div>
+      <section className="py-6 bg-white border-b border-slate-200 sticky top-0 z-40 bg-white/95 backdrop-blur-md">
+        <div className="mx-auto max-w-7xl px-4 flex flex-wrap justify-center items-center gap-2.5 sm:gap-3">
+          {pricingCategories.map(cat => (
+            <button
+              key={cat.id}
+              onClick={() => setActiveTab(cat.id)}
+              className={`px-5 py-3 rounded-2xl text-xs sm:text-sm font-black uppercase tracking-wider transition-all duration-300 ${
+                activeTab === cat.id 
+                ? "bg-[#FF5500] text-white shadow-lg shadow-orange-600/30 scale-105" 
+                : "bg-slate-100 text-slate-700 hover:bg-slate-200 hover:text-slate-900 border border-slate-200"
+              }`}
+            >
+              {cat.name}
+            </button>
+          ))}
         </div>
       </section>
 

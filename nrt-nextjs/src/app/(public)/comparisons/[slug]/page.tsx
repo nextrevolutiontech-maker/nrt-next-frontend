@@ -86,19 +86,21 @@ export function generateStaticParams() {
   return Object.keys(comparisons).map(slug => ({ slug }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const comp = comparisons[params.slug];
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const comp = comparisons[slug];
   if (!comp) return { title: "Comparison Not Found" };
 
   return {
     title: `${comp.title} | Next Revolution Tech`,
     description: comp.summary,
-    alternates: { canonical: `https://www.nextrevolutiontech.tech/comparisons/${params.slug}` }
+    alternates: { canonical: `https://www.nextrevolutiontech.tech/comparisons/${slug}` }
   };
 }
 
-export default function ComparisonPage({ params }: { params: { slug: string } }) {
-  const comp = comparisons[params.slug];
+export default async function ComparisonPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const comp = comparisons[slug];
   if (!comp) notFound();
 
   return (
@@ -170,7 +172,7 @@ export default function ComparisonPage({ params }: { params: { slug: string } })
               <h2 className="text-2xl font-black text-slate-900 mb-6">{comp.optionB.name}</h2>
               <div className="space-y-4 mb-8">
                 <h3 className="text-xs font-black uppercase tracking-widest text-red-600">Drawbacks</h3>
-                {comp.optionB.cons.map((c, i) => (
+                {comp.optionA.cons.map((c, i) => (
                   <div key={i} className="flex items-center gap-3 font-bold text-slate-800">
                     <XCircle className="w-5 h-5 text-red-500 shrink-0" /> {c}
                   </div>

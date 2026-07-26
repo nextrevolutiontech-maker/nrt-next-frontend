@@ -97,13 +97,13 @@ export function CaseStudiesClient() {
       
 
       {/* SECTION 1: INTRO - Dark Hero */}
-      <section className="pt-32 pb-40 px-4 sm:px-6 lg:px-12 xl:px-24 bg-white text-slate-900 relative overflow-hidden">
+      <section className="pt-24 sm:pt-28 pb-14 px-4 sm:px-6 lg:px-12 xl:px-24 bg-white text-slate-900 relative overflow-hidden">
         <InteractiveHero3D />
         <div className="absolute inset-0 opacity-[0.01] pointer-events-none bg-[url('/noise.svg')]" />
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-orange-600/10 rounded-full blur-[120px] -z-10 translate-x-1/2 -translate-y-1/2" />
         <div className="mx-auto max-w-7xl relative z-10">
-           <div className="text-[10px] font-black uppercase tracking-[0.4em] text-orange-600 mb-12">Case Studies</div>
-           <h1 className="text-5xl sm:text-[6rem] lg:text-[7rem] font-black tracking-tighter leading-[1] sm:leading-[0.9] mb-12">
+           <div className="text-[10px] font-black uppercase tracking-[0.4em] text-orange-600 mb-6">Case Studies</div>
+           <h1 className="text-4xl sm:text-6xl font-black tracking-tight leading-[1.05] mb-6">
               Business Transformation <br className="hidden sm:block" />
               <span className="text-orange-600">In Action</span>
            </h1>
@@ -188,13 +188,19 @@ export function CaseStudiesClient() {
                       </div>
                     </div>
 
-                    <div className="pt-4">
+                    <div className="pt-4 flex flex-wrap gap-4">
+                       <Link 
+                         href={`/case-studies/${study.slug}`}
+                         className="inline-flex items-center justify-center gap-3 bg-orange-600 hover:bg-orange-700 text-white px-8 py-4 rounded-xl text-base font-black transition-all shadow-lg group/btn w-full sm:w-fit"
+                       >
+                         Read Full Case Study
+                         <ArrowUpRight className="w-5 h-5 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
+                       </Link>
                        <Link 
                          href={`/contact`}
-                         className="inline-flex items-center justify-center gap-4 bg-white text-slate-900 px-8 py-4 rounded-xl text-lg font-black hover:bg-orange-600 transition-all group/btn w-full sm:w-fit shadow-xl"
+                         className="inline-flex items-center justify-center gap-3 bg-slate-100 border border-slate-300 text-slate-900 px-8 py-4 rounded-xl text-base font-bold hover:bg-white transition-all w-full sm:w-fit"
                        >
                          Discuss Similar Build
-                         <ArrowUpRight className="w-5 h-5 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
                        </Link>
                     </div>
                  </div>

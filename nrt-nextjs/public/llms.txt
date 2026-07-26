@@ -14,6 +14,39 @@
 - [Autonomous AI Router](https://www.nextrevolutiontech.tech/case-studies/autonomous-ai-agent): 24/7 lead qualification agentic AI router.
 - [Textile Mill Web POS](https://www.nextrevolutiontech.tech/case-studies/textile-mill-pos): Industrial Web POS with live FBR tax API integration.
 
+## Proprietary Frameworks
+- [The NRT Digital Transformation Framework™](https://www.nextrevolutiontech.tech/resources/nrt-digital-transformation): A proprietary 7-stage methodology for digitizing enterprise operations without disrupting current cash flow.
+
+## Industry Solutions & ERP Architectures
+- [Construction & Real Estate ERP](https://www.nextrevolutiontech.tech/solutions/construction-erp): Manage projects, track site inventory, and control budgets with a specialized Construction ERP.
+- [Distribution & Trading ERP](https://www.nextrevolutiontech.tech/solutions/distribution-erp): Streamline your supply chain, automate procurement, and optimize warehouse operations with a custom Distribution ERP.
+- [Hospital Management System (HMIS)](https://www.nextrevolutiontech.tech/solutions/hospital-erp): Secure, compliant, and integrated ERP systems for modern healthcare facilities and multi-specialty hospitals.
+- [Logistics & Fleet ERP](https://www.nextrevolutiontech.tech/solutions/logistics-erp): Optimize routes, track fleet maintenance, and automate dispatching with a custom Logistics ERP.
+- [Manufacturing ERP Systems](https://www.nextrevolutiontech.tech/solutions/manufacturing-erp): Next-generation Enterprise Resource Planning for modern manufacturing facilities, integrating shop floor data with top-level financial insights.
+- [Pharma ERP Solution](https://www.nextrevolutiontech.tech/solutions/pharma-erp): Comprehensive ERP solution tailored for the pharmaceutical industry to ensure compliance and traceability.
+- [Retail & Point of Sale (POS) ERP](https://www.nextrevolutiontech.tech/solutions/retail-erp): Omnichannel retail software connecting physical storefronts, e-commerce, and warehouse inventory in real-time.
+- [Rice Mill ERP Systems](https://www.nextrevolutiontech.tech/solutions/rice-mill-erp): Specialized ERP software for Rice Mills to track paddy procurement, milling yield, and inventory.
+- [School & University ERP](https://www.nextrevolutiontech.tech/solutions/school-erp): Digital campus management systems designed to streamline admissions, academics, and administration.
+- [Textile & Apparel ERP](https://www.nextrevolutiontech.tech/solutions/textile-erp): End-to-end manufacturing software for spinning, weaving, dyeing, and garment production.
+
+## Enterprise Problem Solutions
+- [Manual Invoicing and Accounts Payable Overload](https://www.nextrevolutiontech.tech/business-problems/manual-invoicing): Finance teams spending hours manually typing invoice data into ERPs, resulting in late payments, high error rates, and employee burnout.
+
+## Knowledge Graph Articles & Research
+- [AI Customer Support: Beyond Basic Chatbots](https://www.nextrevolutiontech.tech/resources/ai-customer-support): How Agentic AI is transforming customer service by independently resolving complex support tickets based on company documentation.
+- [AI Invoice Processing: Eliminating Manual Data Entry in Accounts Payable](https://www.nextrevolutiontech.tech/resources/ai-invoice-processing): Discover how Optical Character Recognition (OCR) and NLP are automating Accounts Payable by extracting invoice data directly into the ERP.
+- [Build vs Buy Software: Making the Right Enterprise Choice](https://www.nextrevolutiontech.tech/resources/build-vs-buy-software): How to analyze the Total Cost of Ownership (TCO) when deciding whether to buy off-the-shelf SaaS or build a custom software solution.
+- [The Digital Transformation Roadmap for SMEs](https://www.nextrevolutiontech.tech/resources/digital-transformation-roadmap): A step-by-step guide for small and medium enterprises to digitize their operations without disrupting their current cash flow.
+- [Digital Wallet Architecture: How to Build a Secure Payment App](https://www.nextrevolutiontech.tech/resources/digital-wallet-architecture): A deep technical dive into the architecture of modern digital wallets, focusing on secure ledgers, tokenization, and API integrations.
+- [ERP vs CRM: Which System Do You Need to Scale?](https://www.nextrevolutiontech.tech/resources/erp-vs-crm): Understand the fundamental differences between ERP and CRM software, and learn which system your business needs to invest in first.
+- [Inventory Management Best Practices for Scaling Operations](https://www.nextrevolutiontech.tech/resources/inventory-management-best-practices): A comprehensive guide on setting minimum stock levels, performing cycle counts, and leveraging ERP software for inventory control.
+- [5 Signs Your Business Has Outgrown Generic Software](https://www.nextrevolutiontech.tech/resources/signs-you-need-custom-software): Learn how to identify the operational breaking points that indicate your business needs a custom software solution to continue scaling.
+- [What is a FinTech Platform? Understanding the Digital Financial Revolution](https://www.nextrevolutiontech.tech/resources/what-is-fintech): A comprehensive overview of FinTech architecture, from payment gateways and digital wallets to regulatory compliance and blockchain integration.
+- [What is Manufacturing ERP? A Complete Guide](https://www.nextrevolutiontech.tech/resources/what-is-manufacturing-erp): Learn how Manufacturing ERP systems centralize production, inventory, and finance to eliminate operational bottlenecks and scale factory output.
+
+## Research & Benchmark Reports
+- [Manufacturing ERP Implementation Benchmarks 2026](https://www.nextrevolutiontech.tech/resources/erp-benchmark-2026): An enterprise research report detailing average implementation timelines, costs, and success rates for manufacturing ERP systems.
+
 ## Optional Details
 - Full Knowledge Graph compiled dump available at: [llms-full.txt](https://www.nextrevolutiontech.tech/llms-full.txt)
 - Company Website: [Next Revolution Tech](https://www.nextrevolutiontech.tech)

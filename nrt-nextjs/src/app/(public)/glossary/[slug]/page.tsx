@@ -60,19 +60,21 @@ export function generateStaticParams() {
   return Object.keys(glossaryTerms).map(slug => ({ slug }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const item = glossaryTerms[params.slug];
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const item = glossaryTerms[slug];
   if (!item) return { title: "Term Not Found" };
 
   return {
     title: `${item.term} - Technical Definition & Business Guide | Next Revolution Tech`,
     description: item.definition,
-    alternates: { canonical: `https://www.nextrevolutiontech.tech/glossary/${params.slug}` }
+    alternates: { canonical: `https://www.nextrevolutiontech.tech/glossary/${slug}` }
   };
 }
 
-export default function GlossaryPage({ params }: { params: { slug: string } }) {
-  const item = glossaryTerms[params.slug];
+export default async function GlossaryPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const item = glossaryTerms[slug];
   if (!item) notFound();
 
   return (

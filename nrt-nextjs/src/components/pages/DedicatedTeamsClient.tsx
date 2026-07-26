@@ -288,6 +288,163 @@ export default function DedicatedTeamsClient() {
         </div>
       </section>
 
+      {/* ── PRICING PACKAGES (WEEKLY & MONTHLY) ── */}
+      <section className="py-24 px-4 sm:px-6 lg:px-12 xl:px-24 bg-slate-50 border-t border-slate-200">
+        <div className="mx-auto max-w-7xl">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="text-xs font-black uppercase tracking-[0.3em] text-orange-600 mb-4">
+              Transparent Staff Augmentation Plans
+            </div>
+            <h2 className="text-4xl sm:text-5xl font-black tracking-tight text-slate-900 mb-4">
+              Weekly & Monthly <span className="text-orange-600">Engagement Packages</span>
+            </h2>
+            <p className="text-lg text-slate-600 font-medium leading-relaxed">
+              Flexibility to scale up or down. Pay weekly for short-term sprints or lock in dedicated monthly engineers with zero recruitment overhead.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* WEEKLY PLAN */}
+            <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-lg flex flex-col justify-between hover:border-orange-400 transition-all">
+              <div>
+                <div className="inline-block px-3.5 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-black uppercase tracking-wider mb-4 border border-blue-200">
+                  Weekly Sprint
+                </div>
+                <h3 className="text-2xl font-black text-slate-900 mb-2">Weekly Sprint Dev</h3>
+                <p className="text-xs font-bold text-slate-500 mb-6">Dedicated Senior Engineer for Emergency Features & Bug Fixes</p>
+                <div className="flex items-baseline gap-2 mb-6 bg-slate-50 p-4 rounded-2xl border border-slate-200">
+                  <span className="text-3xl font-black text-slate-900">PKR 95,000</span>
+                  <span className="text-xs font-bold text-slate-500">/ Week ($350)</span>
+                </div>
+                <ul className="space-y-3 mb-8 text-sm font-bold text-slate-700">
+                  <li className="flex items-center gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-orange-600 shrink-0" />
+                    <span>1 Dedicated Senior Dev (React, Node, Python)</span>
+                  </li>
+                  <li className="flex items-center gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-orange-600 shrink-0" />
+                    <span>40 Hours / Week Dedicated Capacity</span>
+                  </li>
+                  <li className="flex items-center gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-orange-600 shrink-0" />
+                    <span>Slack, Jira & GitHub Daily Commits</span>
+                  </li>
+                  <li className="flex items-center gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-orange-600 shrink-0" />
+                    <span>Daily Standups & Timezone Sync</span>
+                  </li>
+                  <li className="flex items-center gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-orange-600 shrink-0" />
+                    <span>100% Code Ownership & Zero Lock-in</span>
+                  </li>
+                </ul>
+              </div>
+              <a
+                href="https://wa.me/923442013217?text=Hi%20NRT%2C%20I%20want%20to%20hire%20a%20Weekly%20Dedicated%20Developer%20(PKR%2095k/week)."
+                target="_blank"
+                rel="noreferrer"
+                className="w-full bg-slate-900 hover:bg-orange-600 text-white py-4 rounded-xl text-center font-black text-xs uppercase tracking-wider transition-colors shadow-md"
+              >
+                Hire Weekly Dev
+              </a>
+            </div>
+
+            {/* MONTHLY PLAN (POPULAR) */}
+            <div className="bg-slate-900 text-white rounded-3xl p-8 border-2 border-orange-500 shadow-2xl flex flex-col justify-between relative transform lg:-translate-y-2">
+              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-orange-600 text-white rounded-full px-4 py-1 text-[10px] font-black uppercase tracking-widest shadow-md">
+                Most Popular
+              </div>
+              <div>
+                <div className="inline-block px-3.5 py-1 rounded-full bg-orange-500/20 text-orange-400 text-xs font-black uppercase tracking-wider mb-4 border border-orange-500/30">
+                  Monthly Full-Time
+                </div>
+                <h3 className="text-2xl font-black text-white mb-2">Monthly Dedicated Dev</h3>
+                <p className="text-xs font-bold text-slate-300 mb-6">Full-Time Senior Engineer Embedded Directly in Your Squad</p>
+                <div className="flex items-baseline gap-2 mb-6 bg-slate-950 p-4 rounded-2xl border border-slate-800">
+                  <span className="text-3xl font-black text-emerald-400">PKR 380,000</span>
+                  <span className="text-xs font-bold text-slate-400">/ Month ($1,400)</span>
+                </div>
+                <ul className="space-y-3 mb-8 text-sm font-bold text-slate-200">
+                  <li className="flex items-center gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <span>1 Full-Time Senior Engineer (160 Hrs/Mo)</span>
+                  </li>
+                  <li className="flex items-center gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <span>Timezone Aligned Direct Integration</span>
+                  </li>
+                  <li className="flex items-center gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <span>Full-Stack (Next.js, Node, PostgreSQL, AI)</span>
+                  </li>
+                  <li className="flex items-center gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <span>Tech Lead Oversight & QA Included</span>
+                  </li>
+                  <li className="flex items-center gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <span>14-Day Replacement Guarantee</span>
+                  </li>
+                </ul>
+              </div>
+              <a
+                href="https://wa.me/923442013217?text=Hi%20NRT%2C%20I%20want%20to%20hire%20a%20Monthly%20Dedicated%20Developer%20(PKR%20380k/month)."
+                target="_blank"
+                rel="noreferrer"
+                className="w-full bg-orange-600 hover:bg-orange-500 text-white py-4 rounded-xl text-center font-black text-xs uppercase tracking-wider transition-colors shadow-lg shadow-orange-600/30"
+              >
+                Hire Monthly Dev
+              </a>
+            </div>
+
+            {/* FULL SQUAD PLAN */}
+            <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-lg flex flex-col justify-between hover:border-orange-400 transition-all">
+              <div>
+                <div className="inline-block px-3.5 py-1 rounded-full bg-purple-50 text-purple-700 text-xs font-black uppercase tracking-wider mb-4 border border-purple-200">
+                  Full Product Squad
+                </div>
+                <h3 className="text-2xl font-black text-slate-900 mb-2">Full Engineering Pod</h3>
+                <p className="text-xs font-bold text-slate-500 mb-6">Complete Tech Lead + Senior Developers + QA Pod</p>
+                <div className="flex items-baseline gap-2 mb-6 bg-slate-50 p-4 rounded-2xl border border-slate-200">
+                  <span className="text-3xl font-black text-slate-900">PKR 1,050,000</span>
+                  <span className="text-xs font-bold text-slate-500">/ Month ($3,800)</span>
+                </div>
+                <ul className="space-y-3 mb-8 text-sm font-bold text-slate-700">
+                  <li className="flex items-center gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-orange-600 shrink-0" />
+                    <span>1 Solutions Architect / Tech Lead</span>
+                  </li>
+                  <li className="flex items-center gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-orange-600 shrink-0" />
+                    <span>2 Senior Full-Stack Engineers</span>
+                  </li>
+                  <li className="flex items-center gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-orange-600 shrink-0" />
+                    <span>1 AI Automation & QA Specialist</span>
+                  </li>
+                  <li className="flex items-center gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-orange-600 shrink-0" />
+                    <span>Full CI/CD & Architecture Oversight</span>
+                  </li>
+                  <li className="flex items-center gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-orange-600 shrink-0" />
+                    <span>Priority Emergency SLA & Weekly Review</span>
+                  </li>
+                </ul>
+              </div>
+              <a
+                href="https://wa.me/923442013217?text=Hi%20NRT%2C%20I%20want%20to%20hire%20a%20Full%20Engineering%20Pod%20(PKR%201.05M/month)."
+                target="_blank"
+                rel="noreferrer"
+                className="w-full bg-slate-900 hover:bg-orange-600 text-white py-4 rounded-xl text-center font-black text-xs uppercase tracking-wider transition-colors shadow-md"
+              >
+                Book Engineering Pod
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── CTA ── */}
       <section className="py-32 px-4 sm:px-6 lg:px-12 xl:px-24 bg-white relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-orange-500/10 rounded-full blur-[100px] -z-10" />

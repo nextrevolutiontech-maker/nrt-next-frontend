@@ -101,7 +101,7 @@ export function ServicesClient() {
       
 
       {/* SECTION 1: INTRO - Dark Hero */}
-      <section className="pt-28 sm:pt-32 pb-28 sm:pb-40 px-4 sm:px-6 lg:px-12 xl:px-24 bg-white text-[#0f172a] relative overflow-hidden">
+      <section className="pt-24 sm:pt-28 pb-16 px-4 sm:px-6 lg:px-12 xl:px-24 bg-white text-[#0f172a] relative overflow-hidden">
         <InteractiveHero3D />
         <div className="absolute inset-0 opacity-[0.01] pointer-events-none bg-[url('/noise.svg')]" />
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-orange-600/10 rounded-full blur-[120px] -z-10 translate-x-1/2 -translate-y-1/2" />
