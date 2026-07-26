@@ -37,6 +37,7 @@ export function Header() {
     { name: "PRICING", href: "/pricing" },
     { name: "CASE STUDIES", href: "/case-studies" },
     { name: "RESOURCES", href: "/resources" },
+    { name: "PLAYBOOKS", href: "/playbooks" },
     { 
       name: "COMPANY", 
       href: "/about",
