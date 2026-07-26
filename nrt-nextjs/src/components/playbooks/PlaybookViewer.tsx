@@ -17,12 +17,16 @@ import {
   Sparkles,
   Zap,
   Clock,
-  CheckSquare
+  CheckSquare,
+  Printer,
+  Loader2
 } from "lucide-react";
+import { API_BASE_URL } from "@/config";
 
 export default function PlaybookViewer() {
   const [currentPage, setCurrentPage] = useState(1);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     fullName: "",
@@ -42,22 +46,54 @@ export default function PlaybookViewer() {
     if (currentPage > 1) setCurrentPage((prev) => prev - 1);
   };
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const triggerPDFDownload = () => {
+    // Triggers browser print/save-as-PDF dialog for clean high-res executive PDF output
+    window.print();
+  };
+
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setFormSubmitted(true);
-    setTimeout(() => {
-      setIsModalOpen(false);
-    }, 1800);
+    setIsSubmitting(true);
+
+    try {
+      // 1. Submit lead to Nodemailer backend API
+      const response = await fetch(`${API_BASE_URL}/api/contact`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.fullName,
+          email: formData.workEmail,
+          phone: formData.phone,
+          company: `Company Size: ${formData.companySize} | Role: ${formData.jobTitle}`,
+          message: `[NEW EXECUTIVE LEAD - PLAYBOOK DOWNLOAD]\nAsset: AI Operations Playbook 2026\nFull Name: ${formData.fullName}\nWork Email: ${formData.workEmail}\nPhone/WhatsApp: ${formData.phone}\nCompany Size: ${formData.companySize}\nJob Title: ${formData.jobTitle}`
+        }),
+      });
+
+      if (!response.ok) {
+        console.warn("Backend email dispatch response:", response.status);
+      }
+    } catch (error) {
+      console.error("Error submitting lead to Nodemailer:", error);
+    } finally {
+      setIsSubmitting(false);
+      setFormSubmitted(true);
+      // Trigger instant PDF download / print dialog
+      setTimeout(() => {
+        triggerPDFDownload();
+      }, 500);
+    }
   };
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 pt-32 pb-24 px-4 sm:px-6 lg:px-12 xl:px-24 relative overflow-hidden">
-      {/* AMBIENT BACKGROUND GLOW ACCENTS */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-orange-500/10 rounded-full blur-[140px] pointer-events-none -z-10 translate-x-1/3 -translate-y-1/3" />
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-[160px] pointer-events-none -z-10 -translate-x-1/3 translate-y-1/3" />
+    <div className="min-h-screen bg-white text-slate-900 pt-32 pb-24 px-4 sm:px-6 lg:px-12 xl:px-24 relative overflow-hidden print:p-0 print:m-0 print:bg-white">
+      {/* AMBIENT BACKGROUND GLOW ACCENTS (HIDDEN ON PRINT) */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-orange-500/10 rounded-full blur-[140px] pointer-events-none -z-10 translate-x-1/3 -translate-y-1/3 print:hidden" />
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-[160px] pointer-events-none -z-10 -translate-x-1/3 translate-y-1/3 print:hidden" />
 
-      {/* TOP SYSTEM NAV BAR */}
-      <div className="max-w-6xl mx-auto mb-8 flex flex-wrap items-center justify-between gap-4 bg-slate-900 text-white p-4 sm:p-5 rounded-2xl shadow-xl">
+      {/* TOP SYSTEM NAV BAR (HIDDEN ON PRINT) */}
+      <div className="max-w-6xl mx-auto mb-8 flex flex-wrap items-center justify-between gap-4 bg-slate-900 text-white p-4 sm:p-5 rounded-2xl shadow-xl print:hidden">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-xl bg-orange-600 flex items-center justify-center font-black text-white text-xs shadow-md">
             NRT
@@ -114,8 +150,8 @@ export default function PlaybookViewer() {
       </div>
 
       {/* PLAYBOOK CANVAS CONTAINER (LIGHT THEME) */}
-      <div className="max-w-6xl mx-auto">
-        <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-10 lg:p-12 shadow-2xl relative overflow-hidden min-h-[720px] flex flex-col justify-between">
+      <div className="max-w-6xl mx-auto print:max-w-none">
+        <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-10 lg:p-12 shadow-2xl relative overflow-hidden min-h-[720px] flex flex-col justify-between print:border-none print:shadow-none print:p-0">
           
           {/* TOP WATERMARK & AUTOMATION SCORE TRACKER */}
           <div className="flex flex-wrap items-center justify-between gap-4 border-b border-slate-200 pb-5 mb-8">
@@ -171,7 +207,7 @@ export default function PlaybookViewer() {
 
             <Link
               href="/contact"
-              className="text-orange-600 hover:text-orange-700 font-bold flex items-center gap-1.5 transition-colors group"
+              className="text-orange-600 hover:text-orange-700 font-bold flex items-center gap-1.5 transition-colors group print:hidden"
             >
               <span>Request a Free AI Architecture Audit & Opportunity Report (No Obligation)</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -187,7 +223,7 @@ export default function PlaybookViewer() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-md flex items-center justify-center p-4"
+            className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-md flex items-center justify-center p-4 print:hidden"
           >
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
@@ -203,14 +239,32 @@ export default function PlaybookViewer() {
               </button>
 
               {formSubmitted ? (
-                <div className="py-12 text-center space-y-4">
-                  <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto">
+                <div className="py-10 text-center space-y-5">
+                  <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto shadow-inner">
                     <CheckCircle2 className="w-10 h-10" />
                   </div>
-                  <h3 className="text-2xl font-black text-slate-900">Access Granted!</h3>
-                  <p className="text-slate-600 text-sm font-medium">
-                    Thank you, {formData.fullName}. Your PDF download link and Executive Opportunity Report have been dispatched to <span className="text-orange-600 font-bold">{formData.workEmail}</span>.
-                  </p>
+                  <div>
+                    <h3 className="text-2xl font-black text-slate-900">Access Granted & Lead Sent!</h3>
+                    <p className="text-slate-600 text-sm font-medium mt-1">
+                      Thank you, {formData.fullName}. Your lead details have been submitted to NRT, and your PDF document download is ready below.
+                    </p>
+                  </div>
+
+                  <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
+                    <button
+                      onClick={triggerPDFDownload}
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-orange-600 hover:bg-orange-700 text-white font-bold px-6 py-3 rounded-xl transition-all shadow-lg shadow-orange-600/30"
+                    >
+                      <Download className="w-5 h-5" />
+                      <span>Save / Print PDF Now</span>
+                    </button>
+                    <button
+                      onClick={() => setIsModalOpen(false)}
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold px-6 py-3 rounded-xl transition-all"
+                    >
+                      <span>Close Window</span>
+                    </button>
+                  </div>
                 </div>
               ) : (
                 <div>
@@ -222,7 +276,7 @@ export default function PlaybookViewer() {
                       Download AI Operations Playbook 2026
                     </h3>
                     <p className="text-slate-500 text-xs mt-1 font-medium">
-                      Complete the 5-point executive profile to receive the complete 14-page playbook PDF and ROI matrix.
+                      Complete the 5-point executive profile to receive the complete 14-page playbook PDF and dispatch details to NRT email.
                     </p>
                   </div>
 
@@ -314,10 +368,20 @@ export default function PlaybookViewer() {
 
                     <button
                       type="submit"
-                      className="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold py-3.5 rounded-xl transition-all shadow-lg shadow-orange-600/30 flex items-center justify-center gap-2 mt-4"
+                      disabled={isSubmitting}
+                      className="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold py-3.5 rounded-xl transition-all shadow-lg shadow-orange-600/30 flex items-center justify-center gap-2 mt-4 disabled:opacity-50"
                     >
-                      <Download className="w-5 h-5" />
-                      <span>Download Playbook PDF Now</span>
+                      {isSubmitting ? (
+                        <>
+                          <Loader2 className="w-5 h-5 animate-spin" />
+                          <span>Submitting Lead & Generating PDF...</span>
+                        </>
+                      ) : (
+                        <>
+                          <Download className="w-5 h-5" />
+                          <span>Submit Profile & Download PDF</span>
+                        </>
+                      )}
                     </button>
                   </form>
                 </div>
