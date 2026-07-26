@@ -147,16 +147,16 @@ export function ServiceDetailClient({ slug: propSlug }: { slug?: string }) {
     }, [slug]);
 
     const extra = enhancedContent[slug || ""];
-    const activeService = service || (extra ? {
-        title: extra.title,
-        description: extra.longDescription,
-        image_url: extra.image_url,
-        features: extra.benefits
-    } : null);
+    const activeService = extra ? {
+        title: extra.title || service?.title || "Service Detail",
+        description: extra.longDescription || service?.description,
+        image_url: extra.image_url || service?.image_url || "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+        features: extra.benefits || service?.features || []
+    } : service;
 
-    if (loading && !extra) return <div className="pt-28 text-center font-bold">Loading...</div>;
+    if (loading && !extra) return <div className="pt-36 text-center font-bold">Loading Service Details...</div>;
     if (!activeService) return (
-        <div className="pt-28 text-center min-h-screen bg-[#F2F2F2]">
+        <div className="pt-36 text-center min-h-screen bg-[#F2F2F2]">
             <h1 className="text-4xl font-black mb-8">Service Not Found</h1>
             <Link href="/services" className="px-6 py-3 bg-orange-600 text-white rounded-xl font-bold">Back to Services</Link>
         </div>
@@ -165,7 +165,7 @@ export function ServiceDetailClient({ slug: propSlug }: { slug?: string }) {
     return (
         <div className="min-h-screen bg-white text-slate-900 overflow-x-hidden">
             {/* SECTION 1: HERO - ZERO-SCROLL HEADLINE & COMPACT FIT */}
-            <section className="pt-24 sm:pt-28 pb-12 px-4 sm:px-6 lg:px-12 xl:px-24 bg-white text-slate-900 relative overflow-hidden">
+            <section className="pt-36 sm:pt-40 lg:pt-36 pb-12 px-4 sm:px-6 lg:px-12 xl:px-24 bg-white text-slate-900 relative overflow-hidden">
               <div className="absolute inset-0 opacity-[0.01] pointer-events-none bg-[url('/noise.svg')]" />
               <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-orange-600/10 rounded-full blur-[120px] -z-10 translate-x-1/2 -translate-y-1/2" />
               
@@ -231,9 +231,26 @@ export function ServiceDetailClient({ slug: propSlug }: { slug?: string }) {
                         </div>
                     </div>
 
-                    <div className="lg:col-span-5 relative rounded-3xl overflow-hidden shadow-2xl border border-slate-200 group">
-                        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent opacity-40 z-10" />
-                        {activeService.image_url && <Image width={1200} height={800} src={activeService.image_url} alt={activeService.title} className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700" />}
+                    <div className="lg:col-span-5 relative rounded-3xl overflow-hidden shadow-2xl border border-slate-200 group bg-slate-900 min-h-[320px] flex items-center justify-center">
+                        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent opacity-40 z-10 pointer-events-none" />
+                        {activeService?.image_url ? (
+                          <Image 
+                            width={1200} 
+                            height={800} 
+                            src={activeService.image_url} 
+                            alt={activeService.title} 
+                            unoptimized
+                            className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 relative z-0" 
+                          />
+                        ) : (
+                          <div className="p-8 text-center space-y-4 relative z-20">
+                             <div className="w-16 h-16 rounded-2xl bg-orange-600/20 text-orange-400 border border-orange-500/30 flex items-center justify-center mx-auto text-2xl font-black">
+                                NRT
+                             </div>
+                             <h3 className="text-white font-black text-xl">{activeService?.title}</h3>
+                             <span className="text-xs text-orange-400 font-mono font-bold block uppercase tracking-wider">Enterprise Systems Architecture</span>
+                          </div>
+                        )}
                     </div>
                 </div>
               </div>

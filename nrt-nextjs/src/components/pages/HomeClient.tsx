@@ -245,7 +245,7 @@ export function HomeClient() {
     <div className="relative min-h-screen bg-white overflow-x-hidden text-slate-900 font-sans selection:bg-orange-600 selection:text-white">
       
       {/* HERO SECTION - LIGHT THEME WITH BALANCED TOP SPACING & HUMAN-DESIGNED SHOWCASE */}
-      <section ref={heroRef} className="relative pt-24 sm:pt-28 pb-14 px-4 sm:px-6 lg:px-12 xl:px-24 overflow-hidden bg-white">
+      <section ref={heroRef} className="relative pt-36 sm:pt-40 lg:pt-36 pb-14 px-4 sm:px-6 lg:px-12 xl:px-24 overflow-hidden bg-white">
         {/* LIGHT AMBIENT GLOW ACCENTS (CONTAINED) */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
           <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-orange-500/10 rounded-full blur-[140px]" />
