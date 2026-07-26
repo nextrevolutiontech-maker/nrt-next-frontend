@@ -20,6 +20,17 @@ export interface ResourceArticle {
 }
 
 export const resourcesData: ResourceArticle[] = [
+  {
+    id: "playbook-01",
+    title: "AI Operations Playbook 2026: How Modern Teams Scale Smarter",
+    category: "AI Automation",
+    businessProblem: "High operational costs and 15+ hours lost weekly to manual copy-pasting between disconnected systems.",
+    expectedOutcome: "Automate 70% of manual workflows with Agentic AI and reclaim 240+ operational hours monthly.",
+    readingTime: "15 min read (14-Page Executive Playbook)",
+    link: "/playbooks/ai-operations-2026",
+    isPillar: true,
+    relatedSolutions: ["Agentic AI Workflows", "NRT AI Readiness Score™", "AI Architecture Audit"]
+  },
   // ERP Systems (5)
   {
     id: "erp-01",
