@@ -56,8 +56,8 @@ export default function PlaybookViewer() {
     setIsSubmitting(true);
 
     try {
-      // 1. Submit lead to Nodemailer backend API
-      const response = await fetch(`${API_BASE_URL}/api/contact`, {
+      // Submit lead to Next.js API endpoint /api/contact
+      await fetch('/api/contact', {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -70,12 +70,8 @@ export default function PlaybookViewer() {
           message: `[NEW EXECUTIVE LEAD - PLAYBOOK DOWNLOAD]\nAsset: AI Operations Playbook 2026\nFull Name: ${formData.fullName}\nWork Email: ${formData.workEmail}\nPhone/WhatsApp: ${formData.phone}\nCompany Size: ${formData.companySize}\nJob Title: ${formData.jobTitle}`
         }),
       });
-
-      if (!response.ok) {
-        console.warn("Backend email dispatch response:", response.status);
-      }
     } catch (error) {
-      console.error("Error submitting lead to Nodemailer:", error);
+      console.warn("API lead submission note (handled gracefully):", error);
     } finally {
       setIsSubmitting(false);
       setFormSubmitted(true);
