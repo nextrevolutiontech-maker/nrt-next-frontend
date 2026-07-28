@@ -3,11 +3,19 @@ import type { Metadata } from "next";
 import { SITE_URL } from "@/lib/jsonld";
 
 export const metadata: Metadata = {
-  title: "Pricing & Packages | Next Revolution Tech",
+  title: "Transparent Custom ERP & Software Engineering Pricing | NRT",
   description:
-    "Transparent pricing for custom software development, AI automation, and dedicated engineering teams.",
+    "Explore transparent pricing plans for custom ERP software, AI workflow automation, and dedicated developer teams with 100% IP code ownership.",
   alternates: {
     canonical: `${SITE_URL}/pricing`,
+  },
+  openGraph: {
+    title: "Transparent Custom ERP & Software Engineering Pricing | NRT",
+    description:
+      "Explore transparent pricing plans for custom ERP software, AI workflow automation, and dedicated developer teams with 100% IP code ownership.",
+    url: `${SITE_URL}/pricing`,
+    siteName: "Next Revolution Tech",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Next Revolution Tech Software Engineering Pricing" }],
   },
 };
 

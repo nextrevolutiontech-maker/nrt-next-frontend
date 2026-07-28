@@ -3,11 +3,19 @@ import type { Metadata } from "next";
 import { SITE_URL } from "@/lib/jsonld";
 
 export const metadata: Metadata = {
-  title: "Contact Us | Next Revolution Tech",
+  title: "Contact Technical Architects | Schedule Audit | Next Revolution Tech",
   description:
-    "Get in touch with Next Revolution Tech to discuss your enterprise software, AI automation, or custom business solutions.",
+    "Schedule a 30-minute technical audit directly with Founder Muhammad Ahsan Khan and lead software engineers at Next Revolution Tech.",
   alternates: {
     canonical: `${SITE_URL}/contact`,
+  },
+  openGraph: {
+    title: "Contact Technical Architects | Schedule Audit | Next Revolution Tech",
+    description:
+      "Schedule a 30-minute technical audit directly with Founder Muhammad Ahsan Khan and lead software engineers at Next Revolution Tech.",
+    url: `${SITE_URL}/contact`,
+    siteName: "Next Revolution Tech",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Contact Next Revolution Tech Technical Architects" }],
   },
 };
 

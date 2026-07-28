@@ -90,7 +90,7 @@ export function Header() {
           <a href="/" className="flex items-center py-1.5 z-50">
             <img
               src={logoImage}
-              alt="Next Revolution Tech"
+              alt="Next Revolution Tech Logo - Custom ERP & AI Automation Agency"
               className="h-14 sm:h-16 w-auto object-contain transition-all duration-500 ease-out hover:scale-105 hover:opacity-90"
             />
           </a>

@@ -340,19 +340,32 @@ export function generateStaticParams() {
   return Object.keys(industries).map(slug => ({ slug }));
 }
 
+const ALIAS_CANONICAL: Record<string, string> = {
+  "hospital-erp": "healthcare",
+  "manufacturing-erp": "manufacturing",
+  "retail-erp": "retail",
+  "logistics-erp": "logistics",
+  "school-erp": "education",
+};
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const industry = industries[slug];
-  if (!industry) return { title: "Industry Not Found" };
+  if (!industry) return { title: "Industry Solution Not Found | Next Revolution Tech" };
+
+  const canonicalSlug = ALIAS_CANONICAL[slug] || slug;
+  const canonicalUrl = `https://www.nextrevolutiontech.tech/industries/${canonicalSlug}`;
 
   return {
     title: `${industry.title} | Next Revolution Tech`,
     description: industry.description,
-    alternates: { canonical: `https://www.nextrevolutiontech.tech/industries/${slug}` },
+    alternates: { canonical: canonicalUrl },
     openGraph: {
       title: `${industry.title} | Next Revolution Tech`,
       description: industry.description,
-      url: `https://www.nextrevolutiontech.tech/industries/${slug}`
+      url: `https://www.nextrevolutiontech.tech/industries/${slug}`,
+      siteName: "Next Revolution Tech",
+      images: [{ url: "/og-image.png", width: 1200, height: 630, alt: industry.title }],
     }
   };
 }

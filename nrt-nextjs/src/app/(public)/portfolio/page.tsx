@@ -3,11 +3,19 @@ import type { Metadata } from "next";
 import { SITE_URL } from "@/lib/jsonld";
 
 export const metadata: Metadata = {
-  title: "Our Portfolio & Case Studies | Next Revolution Tech",
+  title: "Enterprise Software Portfolio & Verified Live Demos | NRT",
   description:
-    "Explore our portfolio of successful enterprise ERP systems, AI automation solutions, and custom software projects.",
+    "Browse 36+ verified enterprise ERP systems, POS software, and AI automation projects deployed by Next Revolution Tech.",
   alternates: {
     canonical: `${SITE_URL}/portfolio`,
+  },
+  openGraph: {
+    title: "Enterprise Software Portfolio & Verified Live Demos | NRT",
+    description:
+      "Browse 36+ verified enterprise ERP systems, POS software, and AI automation projects deployed by Next Revolution Tech.",
+    url: `${SITE_URL}/portfolio`,
+    siteName: "Next Revolution Tech",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Next Revolution Tech Enterprise Software Portfolio" }],
   },
 };
 

@@ -57,7 +57,7 @@ export function Footer() {
             <Link href="/" className="inline-block mb-8 group">
               <img
                 src="/logo.png"
-                alt="Next Revolution Tech"
+                alt="Next Revolution Tech Logo - Custom Software & AI Development Agency"
                 className="h-20 sm:h-24 w-auto object-contain transition-all duration-500 ease-out group-hover:scale-105 group-hover:opacity-90"
               />
             </Link>

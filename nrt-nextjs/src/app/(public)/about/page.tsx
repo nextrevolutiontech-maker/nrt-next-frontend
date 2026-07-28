@@ -3,11 +3,19 @@ import type { Metadata } from "next";
 import { getPersonSchema, SITE_URL } from "@/lib/jsonld";
 
 export const metadata: Metadata = {
-  title: "About Us | Next Revolution Tech",
+  title: "About Next Revolution Tech | Enterprise Software & AI Leadership",
   description:
-    "Learn about Next Revolution Tech's mission to drive digital transformation through cutting-edge enterprise software and AI automation.",
+    "Discover Next Revolution Tech's engineering mission, software architecture team led by Muhammad Ahsan Khan, and commitment to business process optimization.",
   alternates: {
     canonical: `${SITE_URL}/about`,
+  },
+  openGraph: {
+    title: "About Next Revolution Tech | Enterprise Software & AI Leadership",
+    description:
+      "Discover Next Revolution Tech's engineering mission, software architecture team led by Muhammad Ahsan Khan, and commitment to business process optimization.",
+    url: `${SITE_URL}/about`,
+    siteName: "Next Revolution Tech",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "About Next Revolution Tech Leadership Team" }],
   },
 };
 
