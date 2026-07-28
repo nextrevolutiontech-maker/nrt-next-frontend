@@ -55,6 +55,39 @@ export function getOrganizationSchema() {
   };
 }
 
+export function getLocalBusinessSchema() {
+  return {
+    "@type": "LocalBusiness",
+    "@id": `${SITE_URL}/#localbusiness`,
+    name: "Next Revolution Tech",
+    url: SITE_URL,
+    logo: `${SITE_URL}/logo.png`,
+    image: `${SITE_URL}/og-image.png`,
+    priceRange: "$1000-$3500",
+    telephone: "+923442013217",
+    email: "ahsan.khan@nextrevolutiontech.tech",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Gulistan-e-Johar",
+      addressLocality: "Karachi",
+      addressRegion: "Sindh",
+      postalCode: "75290",
+      addressCountry: "PK",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 24.9180,
+      longitude: 67.1194,
+    },
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "09:00",
+      closes: "18:00",
+    },
+  };
+}
+
 export function getProfessionalServiceSchema() {
   return {
     "@type": "ProfessionalService",
@@ -73,6 +106,11 @@ export function getProfessionalServiceSchema() {
       addressRegion: "Sindh",
       postalCode: "75290",
       addressCountry: "PK",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 24.9180,
+      longitude: 67.1194,
     },
     areaServed: "Worldwide",
     serviceType: [
@@ -220,3 +258,44 @@ export function getPersonSchema() {
     sameAs: "https://www.linkedin.com/in/muhammad-ahsan-khan-founder-61a51032a",
   };
 }
+
+export function getServiceSchema({
+  title,
+  description,
+  slug,
+  serviceType,
+}: {
+  title: string;
+  description: string;
+  slug: string;
+  serviceType?: string;
+}) {
+  return {
+    "@type": "Service",
+    "@id": `${SITE_URL}/services/${slug}/#service`,
+    name: title,
+    serviceType: serviceType || title,
+    url: `${SITE_URL}/services/${slug}`,
+    description,
+    provider: {
+      "@id": `${SITE_URL}/#organization`,
+    },
+    areaServed: "Worldwide",
+    termsOfService: `${SITE_URL}/terms`,
+  };
+}
+
+export function getBreadcrumbListSchema(
+  items: Array<{ name: string; url: string }>
+) {
+  return {
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, idx) => ({
+      "@type": "ListItem",
+      position: idx + 1,
+      name: item.name,
+      item: item.url.startsWith("http") ? item.url : `${SITE_URL}${item.url}`,
+    })),
+  };
+}
+

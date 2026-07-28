@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Sora, Playfair_Display } from "next/font/google";
 import "./globals.css";
-import { getOrganizationSchema, getProfessionalServiceSchema, getWebSiteSchema } from "@/lib/jsonld";
+import { getOrganizationSchema, getProfessionalServiceSchema, getWebSiteSchema, getLocalBusinessSchema } from "@/lib/jsonld";
 
 export const viewport: Viewport = {
   themeColor: "#EA580C",
@@ -132,6 +132,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@graph": [
                 getOrganizationSchema(),
+                getLocalBusinessSchema(),
                 getProfessionalServiceSchema(),
                 getWebSiteSchema(),
               ],

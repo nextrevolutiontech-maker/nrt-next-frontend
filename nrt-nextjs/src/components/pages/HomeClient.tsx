@@ -805,22 +805,27 @@ export function HomeClient() {
                 return (
                   <div 
                     key={idx} 
+                    itemScope 
+                    itemType="https://schema.org/Question"
                     className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition-colors"
                   >
                     <button
                       onClick={() => setOpenFaqIndex(isOpen ? null : idx)}
                       className="w-full p-6 text-left font-black text-slate-900 text-base sm:text-lg flex items-center justify-between gap-4 cursor-pointer"
                     >
-                      <span>{faq.q}</span>
+                      <span itemProp="name">{faq.q}</span>
                       <span className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 text-sm shrink-0">
                         {isOpen ? <Minus className="w-4 h-4 text-orange-600" /> : <Plus className="w-4 h-4 text-slate-600" />}
                       </span>
                     </button>
-                    {isOpen && (
-                      <div className="px-6 pb-6 pt-0 text-slate-600 text-xs sm:text-sm leading-relaxed border-t border-slate-100 font-medium">
-                        {faq.a}
-                      </div>
-                    )}
+                    <div 
+                      itemScope 
+                      itemProp="acceptedAnswer" 
+                      itemType="https://schema.org/Answer"
+                      className={`px-6 pb-6 pt-0 text-slate-600 text-xs sm:text-sm leading-relaxed border-t border-slate-100 font-medium ${isOpen ? "block" : "hidden"}`}
+                    >
+                      <div itemProp="text">{faq.a}</div>
+                    </div>
                   </div>
                 );
               })}

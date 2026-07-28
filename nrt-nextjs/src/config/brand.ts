@@ -41,7 +41,29 @@ export const TEAM_MEMBERS = [
 ] as const;
 
 export const COMPANY_SOCIAL = {
-  linkedInCompany: "https://www.linkedin.com/company/nextrevolutiontech",
+  linkedInCompany: "https://www.linkedin.com/company/nrt-team/",
   instagram: "https://www.instagram.com/nextrevolutiontech",
   github: "https://github.com/nextrevolutiontech-maker",
+  facebook: "https://www.facebook.com/share/1H3rqGTqLi/",
 } as const;
+
+export const COMPANY_LOCATION = {
+  name: "Next Revolution Tech",
+  streetAddress: "Gulistan-e-Johar",
+  city: "Karachi",
+  region: "Sindh",
+  postalCode: "75290",
+  country: "Pakistan",
+  fullAddress: "Gulistan-e-Johar, Karachi, Sindh 75290, Pakistan",
+  phone: "+92 344 2013217",
+  displayPhone: "0344-2013217",
+  email: "ahsan.khan@nextrevolutiontech.tech",
+  supportEmail: "nextrevolutiontech@gmail.com",
+} as const;
+
+export const DIRECTORY_LISTINGS = {
+  clutch: "https://clutch.co/profile/next-revolution-tech",
+  goodfirms: "https://www.goodfirms.co/company/next-revolution-tech",
+  googleBusiness: "https://maps.google.com/?q=Next+Revolution+Tech+Karachi",
+} as const;
+

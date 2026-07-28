@@ -58,6 +58,31 @@ const nextConfig: NextConfig = {
         destination: "/privacy-policy",
         permanent: true,
       },
+      {
+        source: "/blog/school-erp",
+        destination: "/industries/school-erp",
+        permanent: true,
+      },
+      {
+        source: "/blog/hospital-erp",
+        destination: "/industries/hospital-erp",
+        permanent: true,
+      },
+      {
+        source: "/blog/manufacturing-erp",
+        destination: "/industries/manufacturing-erp",
+        permanent: true,
+      },
+      {
+        source: "/blog/retail-erp",
+        destination: "/industries/retail-erp",
+        permanent: true,
+      },
+      {
+        source: "/blog/logistics-erp",
+        destination: "/industries/logistics-erp",
+        permanent: true,
+      },
     ];
   },
   async headers() {
@@ -98,6 +123,18 @@ const nextConfig: NextConfig = {
           {
             key: "X-Content-Type-Options",
             value: "nosniff",
+          },
+          {
+            key: "Referrer-Policy",
+            value: "strict-origin-when-cross-origin",
+          },
+          {
+            key: "Permissions-Policy",
+            value: "camera=(), microphone=(), geolocation=(), browsing-topics=()",
+          },
+          {
+            key: "X-XSS-Protection",
+            value: "1; mode=block",
           },
           {
             key: "Strict-Transport-Security",

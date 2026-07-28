@@ -164,6 +164,12 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
 Sitemap: ${SITE_URL}/sitemap.xml
 `;
 
